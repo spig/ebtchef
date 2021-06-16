@@ -1,0 +1,7 @@
+Edit Meal Plan
+<%= start_form_tag :action => 'update', :id => @meal_plan.id %>
+<%= select 'meal_plan', 'meal_plan_type_id', MealPlanType.find(:all).collect { |mpt| [ mpt.name, mpt.id ] }, :include_blank => true %>
+<%= text_field 'meal_plan', 'note_tip' %>
+<%= hidden_field_tag 'week', @week %>
+<%= submit_tag 'Update' %>
+<%= end_form_tag %>

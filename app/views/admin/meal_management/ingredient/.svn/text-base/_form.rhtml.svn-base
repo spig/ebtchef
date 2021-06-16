@@ -1,0 +1,2 @@
+<label for="ingredient[name]">Name</label> <%= text_field 'ingredient', 'name' %><br />
+<label for="ingredient[category]">Category</label> <%= text_field_with_auto_complete 'ingredient_category', 'name' %><br />

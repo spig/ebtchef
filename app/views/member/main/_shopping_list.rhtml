@@ -1,0 +1,11 @@
+<%=
+  show_category(@ingredient_categories[IngredientCategory::CANNED_JAR_CATEGORY], @canned_jar_ingredients) +
+  show_category(@ingredient_categories[IngredientCategory::DAIRY_FROZEN_CATEGORY], @dairy_frozen_ingredients) +
+  show_category(@ingredient_categories[IngredientCategory::GRAINS_NUTS_SEEDS_CATEGORY], @grains_nuts_seeds_ingredients) +
+  show_category(@ingredient_categories[IngredientCategory::MEAT_SEAFOOD_CATEGORY], @meat_seafood_ingredients) +
+  show_category(@ingredient_categories[IngredientCategory::PRODUCE_CATEGORY], @produce_ingredients) +
+  show_category(@ingredient_categories[IngredientCategory::MISCELLANEOUS_CATEGORY], @miscellaneous_ingredients)
+%>
+<%=
+  show_category(@ingredient_categories[IngredientCategory::PANTRY_CATEGORY] + ' - check before you shop', @pantry_ingredients) { |name| name + "<br />" }
+%>

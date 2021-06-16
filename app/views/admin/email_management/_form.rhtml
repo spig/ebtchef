@@ -1,0 +1,14 @@
+<%= error_messages_for 'email' %>
+
+<!--[form:email]-->
+<p><label for="email_name">Name</label><br/>
+<%= text_field 'email', 'name'  %></p>
+
+<p><label for="email_recipient_count">Recipient Count</label><br/>
+<%= text_field 'email', 'recipient_count'  %></p>
+
+<p><label for="email_sent_at">Sent at</label><br/>
+<%= datetime_select 'email', 'sent_at'  %></p>
+
+<!--[eoform:email]-->
+

@@ -1,0 +1,54 @@
+8
+
+dir
+227
+svn://ebtchef.com:3691/trunk/public/javascripts/tiny_mce/plugins/paste/css
+svn://ebtchef.com:3691
+
+
+
+2007-02-24T08:05:51.252060Z
+20
+wvoll
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+d0e37886-a427-0410-bba9-d5af18d9fb2f
+
+pasteword.css
+file
+
+
+
+
+2008-02-22T03:41:37.000000Z
+e1dfc4d39541876eae65975a6febf6cc
+2007-02-24T08:05:51.252060Z
+20
+wvoll
+has-props
+
+blank.css
+file
+
+
+
+
+2008-02-22T03:41:37.000000Z
+e873e4b2d1c926891df13afca4f73e49
+2007-02-24T08:05:51.252060Z
+20
+wvoll
+has-props
+

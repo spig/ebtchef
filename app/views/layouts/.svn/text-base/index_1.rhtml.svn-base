@@ -1,0 +1,254 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<title><% unless params[:action]=='signup' %>Everything But the Chef - Login<% else %>Weekly Meal Plan - Signup for Free Weekly Meal Plans<% end %></title>
+
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<% if params[:action]=='signup' %>
+<meta name="description" content="Sign up for a free trial of weekly meal plans with ebtChef.com" />
+<meta name="keywords" content="Weekly meal plan, ebtchef.com, free trial" />
+<% else %>
+<meta name="description" content="" />
+<meta name="keywords" content="" />
+<% end %>
+<meta name="generator" content="PageMentor" />
+<meta name="author" content="SEBO Marketing" />
+
+<link rel="stylesheet" title="normal" type="text/css" href="/t-information.css" media="all" />
+<link rel="stylesheet" title="normal" type="text/css" href="/search.css" media="all" />
+<link rel="stylesheet" title="normal" type="text/css" href="/appearance.css" media="all" />
+<link rel="stylesheet" title="normal" type="text/css" href="/instances.css" media="all" />
+<link rel="stylesheet" title="normal" type="text/css" href="/header.css" media="all" />
+<link rel="stylesheet" title="normal" type="text/css" href="/footer.css" media="all" />
+
+<%= stylesheet_link_tag 'member', :media => 'screen' %>
+<%= stylesheet_link_tag @page_css, :media => 'screen' if @page_css %>
+<%= stylesheet_link_tag 'print', :media => 'print' %>
+
+<!-- On-Load Scripts -->
+<script src="/s-add-onload-scripts.js" type="text/javascript"></script>
+<script src="/s-popup.js" type="text/javascript"></script>
+<script src="/s-drop-down.js" type="text/javascript"></script>
+<script src="/s-onload-scripts.js" type="text/javascript"></script>
+
+<!-- Other Scripts -->
+<script src="/s-email-protect.js" type="text/javascript"></script>
+<script src="/s-swfobject.js" type="text/javascript"></script>
+<!--[if IE 6]><script src="s-ie6hover.js" type="text/javascript"></script><!--><!--<![endif]-->
+
+<%= javascript_include_tag :defaults %>
+</head>
+
+
+<body>
+<div id="container">
+<div id="content" class="hasSubNav">
+<h1 id="siteName">ebtchef.com</h1>
+
+<div id="columnWrapper">
+
+<div class="column1">
+	<div class="columnStyle1">
+		<div class="columnTopLeft"><div class="columnTopRight">&nbsp;</div></div>	
+				<div class="center">
+					<div class="pageSection">
+
+					<%= @content_for_layout %>
+  
+					<div class="bottomLeft"><div class="bottomRight"></div></div>
+					</div>
+				<div class="clear"></div>
+				</div>
+		<div class="columnBottomLeft"><div class="columnBottomRight">&nbsp;</div></div>
+	</div>	
+</div> <!-- Column1 -->
+
+<div class="column2">	
+	<div class="columnStyle2">
+		<div class="columnTopLeft"><div class="columnTopRight">&nbsp;</div></div>
+
+		<div class="center">
+			<div class="blobStyle1">
+  <div class="topLeft"><div class="topRight"><h2>Members</h2></div></div>
+  <div class="blobBody">
+    <ul class="ulStyleNav">
+		<li<%= ' class="current"' if params[:action]=='weekly_meal_plans'%>><%= link_to 'Meal Plans', :controller => 'member/main', :action => 'weekly_meal_plans' %></li>
+		<li<%= ' class="current"' if params[:action]=='getting_most'%>><%= link_to 'Most out of Chef', :controller => 'member/main', :action => 'getting_most' %></li>
+		<li<%= ' class="current"' if params[:action]=='viral'%>><%= link_to 'Get Chef FREE!', :controller => 'member/main', :action => 'viral' %></li>
+		<li<%= ' class="current"' if params[:action]=='askthechef'%>><%= link_to 'Ask Chef', :controller => 'member/main', :action => 'askthechef' %></li>
+		<li<%= ' class="current"' if params[:controller]=='member/account'%>><%= link_to 'My Account', :controller => 'member/account' %></li>
+		<li><%= link_to 'Logout', :controller => '../public', :action => 'logout' %></li>
+	</ul>
+  </div>
+  <div class="bottomLeft"><div class="bottomRight">&nbsp;</div></div>
+	</div>
+  <div class="blobStyle2">
+	<div class="topLeft"><div class="topRight">&nbsp;</div></div>
+	<div class="blobBody">
+	<br/>
+	<%= link_to (image_tag '/images/member/mother_daughters.jpg', :alt => 'Most out of Chef'), :controller => 'member/main', :action => 'getting_most' %>
+	<%= link_to 'Getting the MOST out of Chef', :controller => 'member/main', :action => 'getting_most' %>
+	<%= link_to image_tag('/images/member/arrow', :alt => 'Arrow Icon', :style => 'margin: 3px auto; border: 0px;'), :controller => 'member/main', :action => 'getting_most' %>
+	</div>
+	<div class="bottomLeft"><div class="bottomRight">&nbsp;</div></div>
+	</div>
+  <div class="blobStyle2">
+	<div class="topLeft"><div class="topRight">&nbsp;</div></div>
+	<div class="blobBody">
+	<%= link_to image_tag('/images/member/laughing_free.jpg', :alt => 'Find out how easy it is to get the chef service free', :style => 'margin: 3px auto; border: 0px;'), :controller => 'member/main', :action => 'viral' %>
+	<%= link_to 'Get <em>Chef</em> Service <br/>FREE!', :controller => 'member/main', :action => 'viral' %>
+	<%= link_to image_tag('/images/member/arrow', :alt => 'Arrow Icon'), :controller => 'member/main', :action => 'viral' %>
+	</div>
+	<div class="bottomLeft"><div class="bottomRight">&nbsp;</div></div>
+	</div>
+
+<div class="blobTestimonial">
+	<h2 class="alignText1">Testimonial</h2>
+	<p><em>"With busy lives (both of us are in school and working) Chef has helped us achieve our desire to have consistent and easy dinners without always bare cupboards and headache of multiple trips to the store."</em><br/>
+		&ndash; Happy Newlyweds</p>
+	<a class="alignText1" href="/ebt-chef-testimonials.php">Read More Testimonials</a>
+</div>		</div>
+		<div class="columnBottomLeft"><div class="columnBottomRight">&nbsp;</div></div>
+
+	</div>
+</div> <!-- Column 2 -->
+
+<div class="clear"></div>
+</div> <!-- Column Wrapper -->
+
+<div id="mainNav">
+	<ul id="dropDown">
+		<li class="<% unless @logged_in %>first<% else %>firstMember<% end %>"><a href="<% unless @logged_in %>/index.php<% else %>/member<% end %>">Home</a>
+			<ul><li class="first">&nbsp;</li></ul>
+		</li>
+		<% unless @logged_in %>
+		<li><a href="/ebt-chef-meal-planner.php">How It Works</a>
+			<ul>
+				<li class="first current"><a href="ebt-chef-meal-planner.php">Overview</a></li>
+				<li><a href="/benefits-of-meal-planning.php">Benefits of Meal Planning</a></li>
+				<li><a href="/weekly-meal-plans.php">Weekly Meal Plans</a></li>
+				<li><a href="/weekly-meal-plans.php">Meal Plan Tutorial</a></li>
+				<li><a href="/quick-and-easy-meal-recipe.php">Recipe Examples</a></li>
+				<li><a href="/grocery-shopping-lists.php">Grocery Shopping Lists</a></li>
+				<li><a href="/public/signup">Start Free Trial</a></li>
+			</ul>
+		</li>
+		<% end %>
+		<li><a href="/chefs-corner.php">Chef's Corner</a>
+			<ul>
+				<li class="first"><a href="/kitchen-hints.php">Kitchen hints</a></li>
+				<li><a href="/family-fun-activities.php">Family fun activities</a></li>
+				<li><a href="/stories-worth-sharing.php">Stories Worth Sharing</a></li>
+				<li><a href="/lickin-life-with-laughter.php">Life with Laughter</a></li>
+				<li><a href="/importance-of-family-mealtime.php">Family Mealtime</a></li>
+				<li><a href="/ebt-chef-newsletters.php">EBT Chef Newsletters</a></li>
+			</ul>
+		</li>
+		<% unless @logged_in %>
+		<li><a href="/public/signup">Free Trial</a>
+			<ul><li>&nbsp;</li></ul>
+		</li>
+		<% end %>
+
+		<li><a href="/meal-plan-support.php">Support</a>
+
+			<ul>
+				<li class="first"><a href="/meal-plan-questions.php">FAQ</a></li>
+				<li><a href="/meal-plan-guarantee.php">EBT Chef Guarantee</a></li>
+				<li><a href="/contact-ebt-chef.php">Contact Chef</a></li>
+			</ul>
+		</li>
+		<li<% unless @logged_in %> class="last"<% end %>><a href="/about-ebt-chef.php">About Us</a>
+			<ul>
+				<li class="first"><a href="/ebt-chef-information.php">About Chef</a></li>
+				<li><a href="/thoughts-from-ebt-chef.php">Thoughts from Chef</a></li>
+				<li><a href="/get-ebt-chef-free.php">Get Chef FREE!</a></li>
+				<li><a href="/contact-ebt-chef.php">Contact Chef</a></li>
+				<li><a href="/ebt-chef-testimonials.php">Testimonials</a></li>
+				<li><a href="/ebt-chef-privacy-policy.php">Privacy Policy</a></li>
+			</ul>
+		</li>
+		<% if @logged_in %>
+		<li class="last current" id="currentTab"><%= link_to 'Members', :controller => 'member/main', :action => 'weekly_meal_plans' %>
+			<ul>
+				<li class="<%= 'current' if params[:action]=='weekly_meal_plans'%> first"><%= link_to 'Meal Plans', :controller => 'member/main', :action => 'weekly_meal_plans' %></li>
+				<li<%= ' class="current"' if params[:action]=='getting_most'%>><%= link_to 'Most out of Chef', :controller => 'member/main', :action => 'getting_most' %></li>
+				<li<%= ' class="current"' if params[:action]=='viral'%>><%= link_to 'Get Chef FREE!', :controller => 'member/main', :action => 'viral' %></li>
+				<li<%= ' class="current"' if params[:action]=='askthechef'%>><%= link_to 'Ask Chef', :controller => 'member/main', :action => 'askthechef' %></li>
+				<li<%= ' class="current"' if params[:controller]=='member/account'%>><%= link_to 'My Account', :controller => 'member/account' %></li>
+				<li><%= link_to 'Logout', :controller => '../public', :action => 'logout' %></li>
+			</ul>
+		</li>
+		<% end %>
+	</ul>
+</div>
+<div class="clear"></div>
+</div><!-- Content -->
+
+<div class="clear"></div>
+<div id="footer"><div id="footerWrapper">
+	<div id="footerBar">
+
+		<ul>
+			<li><a href="/contact-ebt-chef.php">Contact Us</a></li>
+			<li><a href="/ebt-chef-privacy-policy.php">Privacy Policy</a></li>
+			<li><a href="/ebt-chef-site-map.php" class="last">Site Map</a></li>
+		</ul>
+		<!-- h1 class="tagline2">1-888-293-2433</h1 -->
+	</div>
+
+	<div id="footerContent">
+			<p>Copyright &copy; 2007 EBT Chef - All Rights Reserved<br/>
+			1181 South Slate Canyon Drive<br/>
+			Provo, UT 84606</p>
+	</div>
+	<div class="clear"></div>
+
+</div></div>
+
+<div id="header"><div id="headerWrapper">
+	<a href="index.php"><img class="headerLogo" src="/images-layout/site-logo.gif" alt="EBTChef.com"/></a>
+
+	<div id="headerLinks">
+		<ul><li class="first"><a href="/index.php">Home</a></li><li class="last"><a href="/ebt-chef-site-map.php">Site Map</a></li></ul>
+	</div>
+	
+	<h1 class="tagline1">Helping Build Strong Families, One Meal at a Time</h1>
+
+	<div id="searchBar">
+		<form action="search.php" method="get">
+			<input type="text" id="query" name="query" />
+			<input type="submit" id="searchSubmit" class="buttonStyle2" value="Search" />
+			<input type="hidden" id="searchType" name="search" value="1" />
+		</form>
+	</div>
+	<div id="login">
+	<% unless @logged_in %>
+	<form action="/public/do_login" method="post" name="login_form">
+			<fieldset>
+				<legend>Member Login</legend>
+				<label for="email">Email Address</label> <input class="textField" name="email" type="text"/><br/>
+				<label for="password">Password</label> <input class="textField" name="password" type="password" value="" />
+				<input value="Login" type="submit" class="buttonStyleLogin"/>
+			</fieldset>
+	</form>
+	<% else %>
+		<a class="buttonStyleLogin" href="<%= url_for :controller => '../public', :action => 'logout' %>">Logout</a>
+	<% end %>
+	</div>
+	<img id="foodBanner" src="/images-layout/food-banner.jpg" alt="Easily add variety, nutrition, and flavor to the meals you cook every day with Everything But the Chef." />
+</div></div><div class="clear"></div>
+</div><!-- Container -->
+
+<% if params[:action]=='signup' || params[:action]=='thank_you' %>
+<script src="<%= request.ssl? ? 'https://ssl.google-analytics.com/urchin.js' : 'http://www.google-analytics.com/urchin.js' %>" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-413917-1";
+_udn = "ebtchef.com";
+urchinTracker();
+</script>
+<% end %>
+
+</body>
+</html>

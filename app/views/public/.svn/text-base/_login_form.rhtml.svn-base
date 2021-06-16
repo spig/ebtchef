@@ -1,0 +1,34 @@
+<%= javascript_tag ( %q|
+  <!--
+  function submitenter(myfield,e)
+  {
+  var keycode;
+  if (window.event) keycode = window.event.keyCode;
+  else if (e) keycode = e.which;
+  else return true;
+
+  if (keycode == 13)
+     {
+     myfield.form.submit();
+     return false;
+     }
+  else
+     return true;
+  }
+  //-->| ) %>
+<div id="login">
+  <span id="member_login">Member Login</span>
+  <%= start_form_tag({:protocol => @protocol, :action => 'do_login', :only_path => false}, {:id => 'login_form', :name => 'login_form'}) %>
+  <div>
+    <label for="email">Email Address</label>
+    <%= text_field_tag 'email', '', :size => 25, :onkeypress => 'return submitenter(this,event)' %>
+  </div>
+  <div>
+    <label for="password">Password</label>
+    <%= password_field_tag 'password', '', :size => 25, :onkeypress => 'return submitenter(this,event)' %>
+  </div>
+  <div id="login_button">
+  <%= link_to_function image_tag("/images/#{login_button ||= 'public/login.png'}", :border => 0, :alt => "submit login information"), 'document.login_form.submit()' %>
+  </div>
+  <%= end_form_tag %>
+</div>

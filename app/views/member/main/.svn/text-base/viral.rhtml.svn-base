@@ -1,0 +1,63 @@
+<div id="viral">
+<div class="notice"><%= flash[:notice] if flash[:notice] and flash[:notice].size > 0 %></div>
+	<%= image_tag 'member/viral/viral_1.jpg', :style => 'float: right; margin: 0 0 10px 10px;' %>
+<h1>Get Chef for Free</h1>
+
+<h2>It Just Takes One to Get Chef FREE of Charge</h2>
+
+
+<p>YES! You can get FREE Chef service. Our referral program is simple and straightforward. For every paying customer that joins Everything but the Chef because of your referral, you receive a month of service absolutely free. One referral per month keeps that service free month after month. Refer 12 paying friends (all at once or spread out over time) and you have <strong>free service for an entire year</strong>.</p>
+
+<p>If you are an annual subscriber, for every paying referral you bring us, your billing date will be pushed back one month, giving you our service free. Refer 12 friends and get your second year of service absolutely free.</p>
+
+<p><strong>So invite a friend today and pay nothing for your subscription tomorrow.</strong></p>
+<h2>It's so easy - here's how:</h2>
+<ol>
+<li>First, input your friends email addresses</li>
+<li>Then decide whether you would like to type a personal message (which is what we recommend) or simply use the one below.</li>
+<li>Then click send!</li>
+
+</ol>
+
+<p>We will begin immediately to count any of your friends that sign up as credit towards your Chef subscription. It only takes one friend signing up and your next month is FREE!</p>
+
+<p>Why not invite 12 friends and get an entire year for free? It's fun, it's easy and frankly we count on you, our good members, to help us spread the word about Chef to keep your cost low. You know how the Chef has helped you and your family. We are committed to strengthening families - and you can help us!</p>
+
+<div class="hr"></div>
+<h2>Everything but the Chef, bringing families together by helping you easily plan, organize and cook regular meals!</h2>
+
+
+
+
+  <%= form_remote_tag(:html => { :id => 'viral_form', :name => 'viral_form' }, :url => 'tell_a_friend', :before => "$('message_sent').hide();$('submit_viral').hide();$('sending_message').show()", :success => "$('form_div').show()" ) -%>
+  <div id="form_div">
+<p>Please enter up to 10 of your friends email addresses separated by commas in the field below (for example- "bill@example.com, sarah@example.com, fred@...").</p>
+<p>Then modify the message below, send as is, or create your own - it's up to you!</p>
+  <p class="notice" id="message_sent"></p>
+ <div class="left_field" style="margin-bottom:10px;">Friends email addresses:</div> <div class="right_field"><%= text_field_tag 'emails', '', :style => 'width: 340px; height:18px; font:12px arial; border: #AEAEAE 1px solid;' %></div></p>
+  <br style="font-size: .8em; clear: both; margin: 5px 0;"/><div class="left_field">Subject:</div> <div class="right_field"><%= text_field_tag 'subject', "#{@user.first_name} invites you to try chef meal planning service", :style => 'width: 340px; height:18px; font:12px arial; border: #AEAEAE 1px solid;' %></div></p>
+  <br style="font-size: .8em; clear: both; margin: 5px 0;"/><div class="left_field">Message:</div>
+    <div class="right_field">
+    <%= text_area_tag 'message', %Q|Hi,
+
+I have found a cool family friendly service I believe you'd really like. It's called Everything but the Chef and every week of the year I get five new meal plans for making complete and delicious dinners, including printable shopping lists! I haven't found any of the recipes to be difficult. Chef has helped me be organized and my family loves meals on the table every night. If I don't like one of the recipes, I simply customize the meal plans with a click of the mouse. It's awesome! I'm saving time and money, and it's fun too!
+
+Perhaps best of all, it's easy to get the service absolutely FREE!
+
+Check it out and join me in saving time and money while serving your family healthy and delicious meals every night.
+
+Sincerely,
+
+#{@user.first_name}|, :size => "65x7", :class => 'viral_input' %>
+</div>
+  </p>
+  <br style="clear: both;" />
+  <br />
+  <p><%= image_submit_tag('member/viral/viral_send_email.gif', :id => 'submit_viral', :style => 'border: 0px;') %></p>
+  <p><%= image_tag 'member/sendingmessage.gif', :alt => 'Sending Message', :id => 'sending_message' %></p>
+  </div>
+  <%= end_form_tag %>
+  
+  <%= javascript_tag "$('sending_message').hide()" %>
+  
+</div>

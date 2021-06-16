@@ -1,0 +1,4 @@
+<div><%= image_tag 'signup/100_percent_guarantee.jpg', :alt => 'My Personal 100% Money-Back Guarantee' %></div>
+        <div id="guarantee_text">
+          Because I am 100% confident that my service will save you lots of time and money in meal planning and inspire you to spend more time with your family, please try it for 30 days and if you <span style="color: #712225; font-weight: bold;">are not completely satisfied I will immediately send you a refund.</span>
+        </div>

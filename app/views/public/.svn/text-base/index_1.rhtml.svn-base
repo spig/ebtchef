@@ -1,0 +1,4 @@
+<!-- Penny Page -->
+<%= flash[:notice] ? javascript_tag("alert(#{flash[:notice].to_json})") : '' %>
+
+<h1>Please log in above or <a href="/ebt-chef-free-trial.php">click here to sign up for a free trial</a></h1>

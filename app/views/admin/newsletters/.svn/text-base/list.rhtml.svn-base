@@ -1,0 +1,31 @@
+<% @title='Newsletters' %>
+
+<p><%= link_to 'New newsletter', :action => 'new' %></p>
+
+<table>
+  <tr class="ListTitle">
+      <td>Available On</td>
+      <td>Status</td>
+      <td>Tip</td>
+      <td>Treat</td>
+      <td>Email</td>
+  </tr>
+  
+<% tic = 0
+   for newsletter in @newsletters %>
+  <tr class="ListLine<%= tic = 1-tic %>">
+    <td><%= newsletter.available_on %></td>
+    <td><%= newsletter.sent ? '<b>Sent</b>' : '<em>Unsent</em>' %> &nbsp; </td>
+    <td><%= newsletter.tip_name %></td>
+    <td><%= newsletter.treat_name %></td>
+    <td><%= newsletter.email_greeting.blank? ? 'Question/Comment from a <i>Chef</i> customer' : newsletter.email_greeting %></td>
+
+    <td class="ListActions"><%= link_to 'Show', :action => 'show', :id => newsletter %></td>
+    <td class="ListActions"><%= link_to 'Edit', :action => 'edit', :id => newsletter %></td>
+    <td class="ListActions"><%= link_to 'Destroy', { :action => 'destroy', :id => newsletter }, :confirm => 'Are you sure?', :post => true %></td>
+  </tr>
+<% end %>
+</table>
+
+<%= link_to 'Previous page', { :page => @newsletter_pages.current.previous } if @newsletter_pages.current.previous %>
+<%= link_to 'Next page', { :page => @newsletter_pages.current.next } if @newsletter_pages.current.next %> 

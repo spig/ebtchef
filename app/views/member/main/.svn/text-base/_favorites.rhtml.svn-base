@@ -1,0 +1,22 @@
+<div id="favorites">
+<% if @favorites.size > 0 -%>
+  <% if @add_to_meal_plan -%>
+  <p>
+    Click on the favorite you would like to add to your meal plan.
+  </p>
+  <% end -%>
+<% @favorites.each do |favorite| -%>
+  <p class="favorite" id="favorite_recipe_<%= favorite.id %>">
+    <%= link_to_remote(image_tag('member/delete_favorite', :class => 'action'), :url => { :action => 'delete_favorite', :id => favorite.id }, :class => 'action', :confirm => "Are you sure you want to delete #{h(favorite.name)}", :method => 'post') unless @add_to_meal_plan %>
+    <%= link_to(image_tag('member/add_to_meal_plan', :class => 'action'), :action => 'add_to_meal_plan', :id => @meal_plan_id, :favorite => favorite.id) if @add_to_meal_plan %>
+    <%= favorite.name %>
+  </p>
+<% end %>
+<% else -%>
+  <% if @add_to_meal_plan -%>
+    <p>There are no favorites to add to your meal plan.  <%= link_to 'Return to this weeks meal plans', :controller => '/member/main' %>.</p>
+  <% else -%>
+    <p>You have not selected any favorites. If you would like to add a favorite, click on the 'Add to Favorites' link next to a recipe. You can then add a saved recipe to a meal plan by selecting 'Add to Meal Plan' from the Favorites page.</p>
+  <% end -%>
+<% end -%>
+</div>

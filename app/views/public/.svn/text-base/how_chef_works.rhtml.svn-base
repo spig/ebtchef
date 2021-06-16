@@ -1,0 +1,37 @@
+<div id="page_header"><%= image_tag('public/howchefworks_header', :alt => 'How Chef Works', :class => 'page_header') %></div>
+	<h2>I.  Everything but the Chef solves EDD <em>(Everyday Dinner Dilemma!)</em> and here's how:</h2>
+	<div class="hcw_indent">
+	   <p>A. Go to EbtChef.com</p>
+		 <p><%= image_tag 'howchefworks/screenshot_1.gif', :class => "screenshot" %></p>
+	<!--	 <p>click on the sign-up link and simply fill in the blanks.</p>
+		 <p><%= image_tag 'howchefworks/screenshot_8.jpg', :class => 'screenshot' %></p>
+		 <p><%= image_tag 'howchefworks/screenshot_3.jpg', :class => 'screenshot' %></p> -->
+	     <p>B. Use your email and password to enter our member site, and voila! You have access to five already-planned, organized, dinner menu options full of variety, plus a shopping list ready to go.</p>
+	     <p>C. It's a good idea to read the Getting the Most out of the Chef page before you begin.</p>
+			 <p><%= image_tag 'howchefworks/screenshot_4.jpg', :class => "screenshot" %></p>
+		</div>
+		<h2>II.  Every Wednesday you'll receive an email with a family fun dessert recipe, as well as your link to 5 newly posted <em>(different every week)</em> meal plans complete with menus, easy recipes, and organized shopping list.</h2>
+		<div class="hcw_indent">
+			<p>A. You can login to the site, click 'print' and rest easy that you've beaten EDD this week! or..</p>
+			<p>B. You can customize your meal plans</p>
+			<div class="hcw_indent">
+	      <p>1. When you discover a recipe that your family really likes and you'd like to save it for re-use later, click the add to favorites button. Saved favorites can also be deleted by clicking delete button found on your favorites page.</p>
+				<p><%= image_tag 'howchefworks/screenshot_5.gif', :class=>"screenshot" %></p>
+	      <p>2. When you find a recipe that you'd like to remove from a meal plan simply click the delete button next to that recipe and it will disappear (you can delete as many recipes in as many meal plans as you'd like). This also removes the ingredients from your shopping list.</p>
+				<p><%= image_tag 'howchefworks/screenshot_6.gif', :class=>"screenshot" %></p>
+	      <p>3. If you'd like to replace the 'deleted' recipe with a saved favorite simply click the "add to meal plan" button next to the meal plan and choose a recipe from your saved favorites. </p>
+				<p><%= image_tag 'howchefworks/screenshot_add_to_meal_plans', :class=>"screenshot" %></p>
+	      <p>4. And of course you can always hit the 'reset' button if you want to start all over with the original meal plans.</p>
+				<p><%= image_tag 'howchefworks/screenshot_reset_button', :class=>"screenshot" %></p>
+			</div>
+			<p>C. Print your shopping list and dinner recipes and you've got EDD under control!</p>
+			  <p><%= image_tag 'howchefworks/screenshot_printer_friendly', :class=>"screenshot" %></p>
+		</div>
+		<h2>III.  Put your shopping list in your purse or wallet so you have it with you the next time you shop.</h2>
+		<div class="hcw_indent">
+			<p>A. 'As is' shopping lists are broken into six different categories, plus Pantry for easier shopping for items.</p>
+	    <p>B. Next to some ingredients, in parentheses, is the amount called for in the recipes you'll make during the week. It's understood that usually items can't be purchased in these exact amounts but this is a guide so you'll know how much to buy considering what you might have on hand and the size the item comes in.</p>
+			<p><%= image_tag 'howchefworks/screenshot_shopping_list', :class => 'screenshot' %></p>
+	    <p>C. If you choose to customize your meal plans for the week, then the shopping list will still be organized with like ingredients listed one after another, but not necessarily combined.</p>
+	<!-- <%= link_to image_tag('howchefworks/screenshot_8.jpg', :style => 'border: 0px;'), :controller => '/public', :action => 'signup' %>-->
+</div>

@@ -1,0 +1,41 @@
+Hello <%= @user.first_name %>,
+
+We are happy to notify you that this week's meal plans brought to you by Everything but the Chef are ready at http://ebtchef.com/ect?s=<%=@user.id%>&e=<%=@email_id%>&next=<%=u "http://ebtchef.com/"%>
+
+To learn how to get Chef's service completely FREE - http://ebtchef.com/ect?s=<%=@user.id%>&e=<%=@email_id%>&next=<%=u "http://ebtchef.com/member/main/viral"%>
+
+Treat Your Family Recipe
+
+Geri's Easiest, Talked about Fruit Pie
+  1 can sweetened condensed milk (14 oz)
+  6 oz non-dairy topping (e.g. Cool Whip)
+  3 Tbsp lemon juice
+  2 1/2 cups any fruit (raspberries, peaches, strawberries, etc.. or use canned, drained well)
+  2 small prepared graham cracker pie crusts
+Instructions:
+  Mix all ingredients with electric mixer.  Pour into crusts.  Cover and refrigerate several hours.
+
+Chef Email of the Week
+
+Suzanne sent us this:
+
+  I have recently learned that I am allergic to wheat, dairy, eggs and soy.  I am looking for a meal service that can assist me in tackling the challenge of living with these allergies, as well as serving delicious meals to the rest of my family.  Is your program able to help me, or is this too extreme??
+
+Chef response:
+Hello Suzanne,
+
+  Thanks so much for your interest in Everything but the Chef. Our service helps with the challenges of meal planning, organization and shopping. Our mission is to give families the best chance at having regular family meals.
+
+  Unfortunately, at this time we do not cater to any special dietary requirements, however we are mindful of the needs of customers and constantly updating our service. You never know what the future may hold. Please check back with us often!
+
+  Please note that our service can be very popular with families that have an individual on a special diet that the other members of the family won't eat. With Chef at least the planning for one of the family meals is all done. Please keep this in mind and best wishes in finding what you're looking for.
+
+Best to you,
+
+Chef
+
+
+
+
+
+unsubscribe here http://ebtchef.com/unsubscribe?email=<%=h @user.email %>

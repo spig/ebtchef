@@ -1,0 +1,103 @@
+          <h2>Shopping List</h2>
+
+          <div class="shopping_list_category">Produce</div>
+          <p class="shopping_list_category">
+          just lettuce (11 oz bag)<br />
+          greener select (12 oz bag)<br />
+          Caesar salad greens (10 oz bag)<br />
+          red onion (1 sm)<br />
+          onion (2 sm)<br />
+          green onions (5)<br />
+          tomato (optional, 1 med)<br />
+          tomato (1 lg)<br />
+          green bell pepper (1 sm)<br />
+          red bell pepper (1 sm)<br />
+          baking potatoes (2 lg)<br />
+          bok choy (1 lg head)<br />
+          seedless grapes (3 c)<br />
+          kiwi (3 lg)<br />
+          watermelon (5 lb)<br />
+          </p>
+
+          <div class="shopping_list_category">Grains</div>
+          <p class="shopping_list_category">
+          roll dough (8 frozen such as Rhodes)<br />
+          Caesar croutons (1 c)<br />
+          pancake mix (whole grain preferred, 2 c)<br />
+          lasagna noodles (oven ready, 4 strips)<br />
+          flour tortillas (4-6 med)<br />
+          white rice (1 c)<br />
+          slivered almonds (1/4 c)<br />
+          </p>
+
+          <div class="shopping_list_category">Dairy</div>
+          <p class="shopping_list_category">
+          dry romano cheese (11/2 T)<br />
+          dry grated parmesan (1/2 c)<br />
+          romano cheese (3 oz grated fresh)<br />
+          parmesan cheese (1 Tbsp grated fresh)<br />
+          feta cheese (1/4 c)<br />
+          processed cheese (10 oz, e.g. velveeta)<br />
+          cream cheese (8 oz)<br />
+          sour cream (11/4 c)<br />
+          milk (4 c total, over pantry amount)<br />
+          frozen baby peas (3/4 c)<br />
+          frozen (or fresh) blueberries (3/4 c)<br />
+          </p>
+
+          <div class="shopping_list_category">Meat</div>
+          <p class="shopping_list_category">
+          chicken breast strips (1.5 lb raw)<br />
+          real bacon pieces (2 oz)<br />
+          beef top sirloin steak strips (.75 lb)<br />
+          Pork tenderloin strips (.75 lb raw)<br />
+          lean ground beef (.5 lb)<br />
+          ground sausage (.5 lb)<br />
+          </p>
+
+          <div class="shopping_list_category">Canned</div>
+          <p class="shopping_list_category">
+          mayonnaise (2 c)<br />
+          spaghetti sauce (2 c)<br />
+          pineapple tidbits (8 oz)<br />
+          mandarin orange sections (11 oz)<br />
+          sliced black olives (21/4 oz dr.wt.)<br />
+          thick chili (15 oz)<br />
+          chopped green chilies (4 oz)<br />
+          </p>
+
+          <div class="shopping_list_category">Miscellaneous</div>
+          <p class="shopping_list_category">
+          chow mein (Chinese) noodles (6 oz or 2 c)<br />
+          Italian dressing (1/4 c)<br />
+          lime juice (1/4 c)<br />
+          chicken ramen noodles (3 oz pkg)<br />
+          tortilla chips (1 lb bag)<br />
+          </p>
+          
+          <div class="shopping_list_category">Pantry - check before you shop</div>
+          <p class="shopping_list_category">
+            beef bouillon<br />
+            bottled minced garlic<br />
+            butter<br />
+            chicken bouillon<br />
+            cornstarch<br />
+            egg<br />
+            flour<br />
+            garlic powder<br />
+            ground ginger<br />
+            honey<br />
+            ketchup<br />
+            lemon juice<br />
+            milk<br />
+            mustard<br />
+            olive oil<br />
+            pepper<br />
+            prepared salsa<br />
+            salt<br />
+            soy sauce<br />
+            sugar<br />
+            vinegar<br />
+            Worcestershire<br />
+            </p>
+        </div>

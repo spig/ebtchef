@@ -1,0 +1,3 @@
+<%= @message %>
+
+<%= "To Join me in saving time and money click here now http://ebtchef.com/ect?referrer_id=#{@user.id}&c=viral&utm_source=viral&utm_medium=email" %>

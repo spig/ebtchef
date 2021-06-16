@@ -1,0 +1,32 @@
+<div id="meals_menu">
+  <ul>
+    <li><%= image_tag 'member/meal_plan', :alt => 'Meal Plans', :title => "Meal Plans for the Week of #{meal_plan_week}" %> <%= link_to_unless_current 'Meal Plans', :action => 'weekly_meal_plans' %></li>
+    <li>| <%= image_tag 'member/shopping_cart', :alt => 'Shopping List', :title => 'Weekly Shopping List' %> <%= link_to_unless_current 'Shopping List', :action => 'shopping_list' %></li>
+    <li>| <%= image_tag 'member/heart', :alt => 'Favorites', :title => 'Your Favorite Recipes' %> <%= link_to_unless_current 'Favorites', :action => 'favorites' %></li>
+    <li>| <%= image_tag 'member/reset', :alt => 'Reset meal plans', :title => "Reset meal plans to default meals for this week." %> <%= link_to_unless_current 'Reset', { :action => 'reset' }, :confirm => "All changes you have made to this weeks meal plans will be lost.  Do you want to continue?" %></li>
+    <li>| <%= image_tag 'member/how_mealplans_work', :alt => 'How Meal Plans Work', :title => 'How Meal Plans Work' %> <%= link_to_unless_current 'How Meal Plans Work', :action => 'how_chef_works' %></li>
+  </ul>  
+</div>
+<%# if User.find_by_id(session[:user_id]).admin %>
+<div id="view_meals_menu">
+  <ul>
+    <li><%= link_to(image_tag('member/prev', :border => "0", :size=> "13x16",:alt => 'Previous Meal Plan', :title => 'Previous Meal Plan'),{:action => 'previous'}) unless @limit == true %>
+       <%= link_to 'Previous Meal Plan', {:action => 'previous'} unless @limit == true  %> <%= image_tag('member/prev', :border => "0", :size=> "13x16",:alt => 'Previous Meal Plan', :title => 'Next Meal Plan')if @limit ==true %><%= 'Previous Meal Plan'  if @limit ==true %>|</li>
+    
+    <li style="font-weight: bold; font-size: 1em;"> Meal Plans for <%= session[:wks_ago] ? "#{meal_plan_week(session[:wks_ago].weeks.ago)}" : "#{meal_plan_week}" %></li>
+    
+    <li>| <%= link_to(image_tag('member/next', :border => "0", :size=> "13x16",:alt => 'Next Meal Plan', :title => 'Next Meal Plan'),{:action => 'next'}) if session[:wks_ago] %>
+       <%= link_to 'Next Meal Plan', {:action => 'next'} if session[:wks_ago] %> <%= image_tag('member/next', :border => "0", :size=> "13x16",:alt => 'Next Meal Plan', :title => 'Next Meal Plan')unless session[:wks_ago] %> <%='Next Meal Plan' unless session[:wks_ago] %></li>
+    
+    <li>| <%= link_to "Current Week",{:action => "cweek"} %></li>  
+  </ul>  
+</div>
+<%# end %>
+<!-- <div id="meals_menu">
+  <ul>
+    <li>Limit = <%#= @limit %></li>
+    <li>Weeks Ago = <%#= session[:wks_ago] %></li>
+    <li>Joined On = <%#= @joined_on %></li>
+    <li>Week Number = <%#= @week_number %></li>
+  </ul>  
+</div> -->

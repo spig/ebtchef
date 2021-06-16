@@ -1,0 +1,69 @@
+
+  <div style="color: red;">
+    <p>Currently your account is on hold. We're happy to welcome you back! Please update your payment information (below) so we can continue to provide
+     our awesome Chef service that helps you prepare Regular family meals. THANKS!</p>
+  </div>
+     <%= start_form_tag :action => 'activate_account' %>
+     <div class="form_element">
+       <label for="user[first_name]">First Name</label>
+       <%= text_field :user, :first_name, :size => 25 %>
+     </div>
+     <div class="form_element">
+       <label for="user[last_name]">Last Name</label>
+       <%= text_field :user, :last_name, :size => 25 %>
+     </div>
+     <div class="form_element">
+       <label for="user[email]">Email</label>
+       <%= text_field :user, :email, :size => 25 %>
+     </div>
+     <div class="form_element">
+       <label for="user[email_confirmation]">Confirm Email</label>
+       <%= text_field :user, :email_confirmation, :size => 25 %>
+     </div>
+     <div class="form_element">
+       <label for="user[address]">Address</label>
+       <%= text_field :user, :address, :size => 25 %>
+     </div>
+     <div class="form_element">
+       <label for="user[city]">City</label>
+       <%= text_field :user, :city, :size => 25 %>
+     </div>
+     <div class="form_element">
+       <label for="user[state]">State</label>
+       <%= text_field :user, :state, :size => 25, :maxlength => 2 %>
+     </div>
+     <div class="form_element">
+       <label for="user[zip]">Zip</label>
+       <%= text_field :user, :zip, :size => 25 %>
+     </div>
+     Pay by either <%= radio_button_tag 'payment_method', '', (@user.ccnum and @user.ccnum.size > 0), :onclick => "$('credit_card_info').show(); $('user_ccnum').disabled = false; $('electronic_check_info').hide(); $('user_routing_number').disabled = true; $('user_checkacct').disabled = true; $('user_phone').disabled = true;" %> Credit Card or <%= radio_button_tag 'payment_method', '', (@user.checkacct and @user.checkacct.size > 0), :onclick => "$('credit_card_info').hide(); $('user_ccnum').disabled = true; $('electronic_check_info').show(); $('user_routing_number').disabled = false; $('user_checkacct').disabled = false; $('user_phone').disabled = false;" %> Electronic Check
+     <div id="credit_card_info">
+       <div class="form_element">
+         <label for="user[ccnum]">Credit Card #</label>
+         <%= text_field :user, :ccnum, :size => 25 %>
+       </div>
+       <div class="form_element">
+         <label for="user[cc_exp]">CC Exp</label>
+         <%= date_select :user, :cc_exp, :discard_day => true %>
+       </div>
+     </div>
+     <div id="electronic_check_info">
+       <div class="form_element">
+         <label for="user[routing_number]">Routing Number</label>
+         <%= text_field :user, :routing_number, :size => 25 %>
+       </div>
+       <div class="form_element">
+         <label for="user[checkacct]">Checking Account</label>
+         <%= text_field :user, :checkacct, :size => 25 %>
+       </div>
+       <div class="form_element">
+         <label for="user[phone]">Phone</label>
+         <%= text_field :user, :phone, :size => 25 %>
+       </div>
+     </div>
+     <%= javascript_tag("$('credit_card_info').show(); $('user_ccnum').disabled = false; $('electronic_check_info').hide(); $('user_routing_number').disabled = true; $('user_checkacct').disabled = true; $('user_phone').disabled = true;") if @user.ccnum and @user.ccnum.size > 0 %>
+     <%= javascript_tag("$('credit_card_info').hide(); $('user_ccnum').disabled = true; $('electronic_check_info').show(); $('user_routing_number').disabled = false; $('user_checkacct').disabled = false; $('user_phone').disabled = false;") if @user.checkacct and @user.checkacct.size > 0 %>
+     <br />
+     <%= submit_tag 'Activate My Account' %>
+     <%= end_form_tag %>
+     </div>

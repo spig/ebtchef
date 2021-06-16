@@ -1,0 +1,49 @@
+<body style="text-align: center;">
+  <div style="margin: 0px auto;padding: 0px; width: 524px; text-align: left;">
+    <p style="border: 0; margin: 0;"><img alt="Everything but the Chef Weekly Reminder" src="http://ebtchef.com/images/emails/weekly/everything_but_the_chef.png" style="margin: 0px; padding: 0px;" /><a href="http://ebtchef.com/"><img alt="Login to my account" src="http://ebtchef.com/images/emails/weekly/login_to_my_account.png" style="margin: 0px; padding: 0px; border: 0px;" /></a></p>
+    <p style="border: 0; margin: 0;"><img alt="Simply delicious meals you can make" src="http://ebtchef.com/images/emails/weekly/delicious_meals.png" style="margin: 0px; padding: 0px;" /></p>
+    <div style="border-right: 1px solid #d7c59f; border-left: 1px solid #d7c59f; border-bottom: 1px solid #d7c59f; color: #808080; font-family: arial, verdana, helvetica, sans-serif;font-size: .8em;margin: 0px auto; padding: 0px; width: 522px;">
+      <div style="padding: 15px 40px; color: #333; background-color: #fff; word-spacing: .25em; line-height: 1.3em;">
+  	    <p style="font: 12px arial; color: #333;">Hello,</p>
+    	  <p style="font: bold 12px arial; color: #45616c;">We are happy to notify you that this week's meal plans brought to you by <em>Everything but the Chef</em> are ready at <a href="http://ebtchef.com/" style="color: #45616c;">EbtChef.com</a></p>
+        <p style="font: 12px arial; color: #333;"><strong style="font: bold 15px arial; color: #5c020a;">REMINDER:</strong>we are currently running a special offer -- <a href="https://ebtchef.com/public/signup?c=newsletter&e=<%=@user.email%>&h=<%=Promo.gen_hash('newsletter', @user.email)%>">a free 30 day trial!</a></p>
+    	  <p style="font: bold 15px arial; color: #333; margin-bottom: 0px;">Treat Your Family Recipe</a></p>
+        
+    	  <ul style="list-style: none; margin: 0px 0;">
+    	    <li style="font: bold 12px arial; color: #333;">Geri's <em>Easiest</em>, Talked about Fruit Pie<li>
+    	    <li>1 can sweetened condensed milk (14 oz)</li>
+    	    <li>6 oz non-dairy topping (e.g. Cool Whip)</li>
+    	    <li>3 Tbsp lemon juice</li>
+    	    <li>2 1/2 cups any fruit (raspberries, peaches, strawberries, etc.. or use canned, drained well)</li>
+    	    <li>2 small prepared graham cracker pie crusts</li>
+    	  </ul>
+    	  <ul style="list-style: none; margin-top: 0px;">
+    	    <li style="font: bold 12px arial; color: #333;">Instructions:</li>
+    	    <li>Mix all ingredients with electric mixer.  Pour into crusts.  Cover and refrigerate several hours.</li>
+    	  </ul>
+        <em style="font: bold italic 15px arial; color: #5c020a;">Chef Email of the Week</em>
+        <p style="font: 12px arial; color: #333;">Suzanne sent us this:</p>
+        <p style="font: 12px arial; color: #333;">
+          I have recently learned that I am allergic to wheat, dairy, eggs and soy.  I am looking for a meal service that can assist me in tackling the challenge of living with these allergies, as well as serving delicious meals to the rest of my family.  Is your program able to help me, or is this too extreme??
+        </p>
+        <p style="font: bold italic 15px arial; color: #5c020a;">Chef response:</p>
+        <p>Hello Suzanne,<br />
+          <br />
+          Thanks so much for your interest in <em>Everything but the Chef</em>. Our service helps with the challenges of meal planning, organization and shopping. Our mission is to give families the best chance at having regular family meals.<br />
+          <br />
+          Unfortunately, at this time we do not cater to any special dietary requirements, however we are mindful of the needs of customers and constantly updating our service. You never know what the future may hold. Please check back with us often!<br />
+          <br />
+          Please note that our service can be very popular with families that have an individual on a special diet that the other members of the family won't eat. With <em>Chef</em> at least the planning for one of the family meals is all done. Please keep this in mind and best wishes in finding what you're looking for.<br />
+        </p>
+        <p style="font: 14px arial; color: #333;">We hope you <a href="https://ebtchef.com/public/signup?c=newsletter&e=<%=@user.email%>&h=<%=Promo.gen_hash('newsletter', @user.email)%>">choose to be a part</a> of <em style="font: italic 14px arial; color: #5c020a;">Everything but the Chef</em> : We help you build a strong family one meal at a time.</p>
+        <p style="font: 12px arial; color: #45616c;">Best to you,</p>
+        <p style="font: italic 15px arial; color: #5c020a;">Chef</p>
+      </div>
+      <img src="http://ebtchef.com/et?s=<%=@user.id%>&e=<%=@email_id%>" style="width: 1px; height: 1px;" />
+      <p style="border: 0; margin: 0;"><img src="http://ebtchef.com/images/emails/weekly/ebtchef_footer.png" alt="Everything but the Chef - Helping you make family memories one meal at a time!" style="margin: 22px auto 0;"></p>
+    </div>
+    <p style="font-size: 9px arial; color: #333;"><a href="http://ebtchef.com/unsubscribe?email=<%=h @user.email %>" style="font: 9px arial; color: #333;">Unsubscribe here</a></p>
+  </div>
+</body>
+
+

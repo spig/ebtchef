@@ -1,0 +1,11 @@
+Dear <%= @user.first_name.capitalize %>,
+
+Congratulations and Welcome to Everything but the Chef - the fastest growing meal planning community on the web. We are confident that you will find your experience enjoyable and we look forward to serving you and your family for years to come. 
+
+Your first 30 days--from your date of sign-up--is FREE as promised. After that, a payment will be made using the billing information that you provided us. 
+
+Do you realize how EASY it actually is to get the Chef service free forever? - Find out at our website, http://ebtchef.com/member/main/viral .
+
+Watch for regular Chef service upgrades and best to you in your Cooking Adventures, 
+
+The Chef

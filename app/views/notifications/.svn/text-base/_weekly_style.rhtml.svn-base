@@ -1,0 +1,32 @@
+<style type="text/css">
+<!--
+	.email p {
+		font: 12px arial;
+		color: #333;
+	}
+	h1 {
+		margin-left: -20px;
+		font: bold italic 15px arial;
+		color: #5c020a;
+	}
+	h2 {
+		font: bold 12px arial;
+		color: #45616c;
+	}
+	h3 {
+		font: bold 12px arial;
+		color: #333;
+	}
+	h4 {
+		font: italic 15px arial;
+		color: #5c020a;
+	}
+	.treat {
+		margin-left: 40px;
+	}
+	img {
+		margin:0px;
+		border:0px;
+	}
+-->
+</style>

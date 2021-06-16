@@ -1,0 +1,25 @@
+<% cycle = cycle('0','1') %>
+<tr valign="top" class="ListLine<%= cycle %>" style="text-align:right">
+  <td><%= user.id %> <%= link_to 'X', { :action => 'show_cancel', :id => user.id }, :confirm => "Are you sure you want to cancel the account for #{user.email}?" unless !user.cancelled_on.nil? %> <%= link_to 'P', :action => 'change_password', :id => user.id %></td>
+  <td><%= "#{user.first_name} #{user.last_name}" %></td>
+  <!-- <td><%#= link_to user.email, "mailto:#{user.email}" %></td> -->
+  <td><%= user.email %></td>
+  <td><%= user.affiliate_id %></td>
+  <td><%= user.recurrence %></td>
+  <td><%= user.price %></td>
+  <td><%= user.created_at.to_date.to_formatted_s('%m:%d:%y') if user.created_at %></td>
+  <td style="text-align: center;"><%= user.viral_sent_count if user.viral_sent_count.to_i > 0 %></td>
+  <td><%= user.last_billed_on.to_date.to_formatted_s('%m:%d:%y') if user.last_billed_on %></td>
+  <td><%= user.next_billing_on.to_date.to_formatted_s('%m:%d:%y') if user.next_billing_on %></td>
+  <td style="text-align: center;"><%= Integer((Time.now - user.created_at) / 1.day) if user.created_at %></td>
+  <td><%= user.last_login_at.to_date.to_formatted_s('%m:%d:%y') if user.last_login_at %></td>
+  <td><%= user.user_logs.size %></td>
+  <td><%= user.state.upcase if ! user.state.to_s.strip.empty? %></td>
+  <td><%= user.phone if ! user.phone.to_s.strip.empty? %></td>
+  <td><%= "#{user.check_or_credit}/#{user.billing_number}" %></td>
+  <td><%= link_to user.referrer.to_s[0..30]+'...', user.referrer.to_s if ! user.referrer.to_s.strip.empty? %></td>
+  <% if !user.cancelled_on.nil? %>
+  <td><%= user.cancelled_on.to_date.to_formatted_s('%m:%d:%y') if user.cancelled_on %></td>
+  <td><%= user.cancel_reason %></td>
+  <% end %>
+</tr>

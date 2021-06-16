@@ -1,0 +1,44 @@
+<div style="text-align: center;">
+<div style="width:524px; margin:0 auto; padding:0;">
+	<div style="border: 0; margin: 0;">
+      <a href="http://www.ebtchef.com/"><img alt="Everything but the Chef Weekly Reminder" src="http://ebtchef.com/images-layout/email-header.gif" style="margin: 0px; padding: 0px; border: 0px;" /></a>
+		<img alt="Simply delicious meals you can make" src="http://ebtchef.com/images-layout/email-header-food.gif" style="margin: 0px; padding: 0px;" />
+	</div>
+	<div style="margin:0 3px; padding: 15px 40px; text-align: left; border:1px solid #d7c59f; font-family: arial, verdana, helvetica, sans-serif;font-size: .8em; color: #333; background-color: #fff; word-spacing: .25em; line-height: 1.3em;">    		<!-- greeting -->
+        <p style="margin: 15px auto;">
+            Dear <%= @user.first_name.capitalize %>,
+        </p>
+        <p style="margin: 15px auto;">
+            Your free trial account with <b>Everything but the Chef</b> is about to expire.
+            We hope you have taken advantage of the many benefits Chef offers
+            its members. Planning, organizing and having a shopping list are
+            half the battle when it comes to meal prep. Chef does all that for you!
+        </p>
+        <p style="margin: 15px auto;">
+            Please go to <a href="http://www.ebtchef.com/">www.EbtChef.com</a> and login.
+            You may go to "My Account" page in the "Members" section and fill in your
+            billing information now. Or after your trial has expired, your login will take you
+            directly to your account page. Updating your billing information within the next 
+            few days will guarantee uninterrupted service.
+        </p>
+        <p style="margin: 15px auto;">
+            Your credit card (or checking account) will be billed each month on the
+            day you signed-up (e.g. if you sign up March 20th, you will be billed
+            April 20th, etc.) Chef service is very affordable at just $4.95 a month.
+            And now we are offering a year subscription for just $49.95
+            (for more than a 15% savings).
+        </p>
+        <p style="margin: 15px auto;">
+            Remember, Chef means variety--something new and different every week.
+            What's on the menu for next week? Please sign up and find out!
+        </p>
+        <p style="margin: 15px auto;">
+            Best to you in your family mealtime adventures!
+        </p>
+        <p style="margin: 15px auto;">
+            <i>Chef</i>
+        </p>
+    </div>
+      <p style="border: 0; margin: 0;"><img src="http://ebtchef.com/images-layout/email-footer.gif" alt="Everything but the Chef - Helping you make family memories one meal at a time!" style="margin: 0 auto;"></p>
+  </div>
+</div>

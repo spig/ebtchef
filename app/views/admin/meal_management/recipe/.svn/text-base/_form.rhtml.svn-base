@@ -1,0 +1,14 @@
+<dl>
+<dt><label for="name">Recipe Name</label></dt>
+<dd><%= text_field_with_auto_complete 'recipe', 'name', :max_length => 100, :autocomplete => false %><br /></dd>
+<dt><label for="name">Servings</label></dt>
+<dd><%= text_field 'recipe', 'servings', :size => 25 %><br /></dd>
+<dt>Ingredients</dt>
+<dd>
+  <%= render :partial => 'recipe_ingredient_list' %>
+</dd>
+<dt><label for="name">Instructions</label></dt>
+<dd><%= text_area 'recipe', 'instructions', :cols => 60, :rows => 3 %><br /></dd>
+<dt><label for="name">Special Notes</label></dt>
+<dd><%= text_area 'recipe', 'notes', :cols => 60, :rows => 3 %><br /></dd>
+</dl>

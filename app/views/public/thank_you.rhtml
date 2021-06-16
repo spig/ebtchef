@@ -1,0 +1,45 @@
+<%#= flash[:notice] ? javascript_tag("alert(#{flash[:notice].to_json})") : '' %>
+<h1>Congratulations and Thank You!</h1>
+<br/>
+<p>You have just joined the most exciting and
+fastest growing meal planning community on the web! Please look for a welcome email with your free e-book from ebtchef.com shortly as well as a weekly
+newsletter reminder when your new meal plans are ready. (Please add ebtchef.com to your email list.)</p>
+<p>To begin using your weekly meal plan service, simply enter your email address and password in the 'Member Login' section above, and then click the 'Login' button.</p>
+<p>
+Feel free to contact us at <a href="mailto:askthechef@ebtchef.com">askthechef@ebtchef.com</a> with any questions and Login above
+to get started and learn how easy it is to
+get Chef absolutely <%= link_to 'FREE', :controller => 'member/main', :action => 'viral'  %> just by telling your friends!</p>
+
+<!--LeadBurst Conversion Code-->
+
+<iframe src="https://www.leadburstnetwork.com/trackf.asp?o=24&ref=<%= @order_id %>&amt=&adcode=<%= @referrer %>" height="0" width="0" frameborder="0"></iframe>
+
+<!--LeadBurst Conversion Code End-->
+
+<!-- New tracking pixel 3-6-07 -->
+<iframe src="https://www.lynxtrack.com/track.frame.php?g=4084&o=<%= @order_id %>" height="1" width="1" frameborder="0">
+<script language="JavaScript" src="https://www.lynxtrack.com/trackjs/g-4084/o-<%= @order_id %>/track.js"></script>
+<noscript>
+  <img src="https://www.lynxtrack.com/track.php?g=4084&o=<%= @order_id %>" width="1" height="1" border="0">
+</noscript>
+</iframe>
+<!-- New tracking pixel 3-6-07 END -->
+
+<!-- Google Code for purchase Conversion Page -->
+<script language="JavaScript" type="text/javascript">
+<!--
+var google_conversion_id = 1070408032;
+var google_conversion_language = "en_US";
+var google_conversion_format = "2";
+var google_conversion_color = "FFFFFF";
+if (1.0) {
+  var google_conversion_value = 1.0;
+}
+var google_conversion_label = "purchase";
+//-->
+</script>
+<script language="JavaScript" src="https://www.googleadservices.com/pagead/conversion.js">
+</script>
+<noscript>
+<img height=1 width=1 border=0 src="https://www.googleadservices.com/pagead/conversion/1070408032/imp.gif?value=1.0&label=purchase&script=0">
+</noscript>

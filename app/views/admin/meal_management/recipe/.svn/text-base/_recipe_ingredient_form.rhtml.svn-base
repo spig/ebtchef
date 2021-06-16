@@ -1,0 +1,11 @@
+<% @recipe_ingredient = recipe_ingredient %>
+<% @ingredient = ingredient %>
+<% @ingredient_category = ingredient_category %>
+<div><label for="recipe_ingredient[quantity]">Quantity</label><%= text_field 'recipe_ingredient', 'quantity', :size => 5 %></div>
+<div><label for="recipe_ingredient[measure]">Measure</label><%= text_field 'recipe_ingredient', 'measure', :size => 10 %></div>
+<div><label for="ingredient[name]">Name</label><%= text_field_with_auto_complete 'ingredient', 'name', :size => 40 %></div>
+<div><label for="recipe_ingredient[alternate]">Alternate</label><%= text_field 'recipe_ingredient', 'alternate', :size => 40 %></div>
+<div><label for="recipe_ingredient[notes]">Recipe Notes</label><%= text_field 'recipe_ingredient', 'notes', :size => 40 %></div>
+<div><label for="recipe_ingredient[shopping_notes]">Shopping List Notes</label><%= text_field 'recipe_ingredient', 'shopping_notes', :size => 40 %></div>
+<div><label for="ingredient_category[name]">Category</label><%= text_field_with_auto_complete 'ingredient_category', 'name' %></div>
+<%= javascript_tag "$('recipe_ingredient_quantity').focus();" %>

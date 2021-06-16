@@ -1,0 +1,5 @@
+<ul id="ingredient_list" class="ingredients">
+  <% @recipe.recipe_ingredients.sort{|a,b| a.position <=> b.position}.each do |recipe_ingredient| %>
+    <%= render :partial => 'recipe_ingredient', :locals => { :ri => recipe_ingredient } %>
+  <% end %>
+</ul>

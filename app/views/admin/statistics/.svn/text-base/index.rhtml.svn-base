@@ -1,0 +1,4 @@
+<h1>Everything but the Chef Statistics</h2>
+
+<div><%= link_to 'New Signups', :action => 'new_signups' %></div>
+<div><%= link_to 'Referrals Sent this week', :action => 'referrals' %></div>

@@ -1,0 +1,54 @@
+8
+
+dir
+227
+svn://ebtchef.com:3691/trunk/public/javascripts/tiny_mce/langs
+svn://ebtchef.com:3691
+
+
+
+2007-02-24T08:05:51.252060Z
+20
+wvoll
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+d0e37886-a427-0410-bba9-d5af18d9fb2f
+
+readme.txt
+file
+
+
+
+
+2008-02-22T03:41:37.000000Z
+65918f39f9cc0b474b3cf5e4fe7923e6
+2007-02-24T08:05:51.252060Z
+20
+wvoll
+has-props
+
+en.js
+file
+
+
+
+
+2008-02-22T03:41:37.000000Z
+e212a5941858c1947dd4cb780f5664f3
+2007-02-24T08:05:51.252060Z
+20
+wvoll
+has-props
+

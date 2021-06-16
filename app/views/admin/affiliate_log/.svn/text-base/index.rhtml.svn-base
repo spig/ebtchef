@@ -1,0 +1,25 @@
+<h2>Affiliate Logs</h2>
+<% if @affiliate %>
+Most Recent Affiliate Logs for <%= @affiliate.name %>
+<% end %>
+<table>
+  <tr>
+    <th>
+      IP Addr
+    </th>
+    <th>
+      Date Visited
+    </th>
+  </tr>
+<% last_affiliate = nil %>
+<% @affiliate_logs.each do |affiliate_log| %>
+<% if last_affiliate != affiliate_log.affiliate_id %>
+  <tr><th colspan="2">Affiliate: <%= Affiliate.find(affiliate_log.affiliate_id).name %></th>
+    <% last_affiliate = affiliate_log.affiliate_id %>
+<% end %>
+  <tr>
+    <td><%= affiliate_log.ip_addr %></td>
+    <td><%= affiliate_log.created_at.strftime('%m-%d-%y %H:%M') %></td>
+  </tr>
+<% end %>
+</table>

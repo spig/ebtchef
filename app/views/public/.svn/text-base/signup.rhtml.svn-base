@@ -1,0 +1,107 @@
+<table>
+<tr>
+<td width="50%" valign="top" style="line-height:1.75em;">
+
+<h2>Free Sign-up</h2>
+<p>Simply fill in the information to the right--<b>NO CREDIT CARD REQUIRED!</b> Then click "Start Trial!"
+    Following the free trial you will be asked to provide a credit card number on the "My Account" page if
+    you would like to continue using our service.
+    You will then be billed a monthly subscription fee of only $4.95 (or a yearly subscription fee of $49.95)
+    beginning that day, and on that same day of the month each month.
+    If you ever need to cancel your subscription, it's easy.
+    Just go to the "My Account" page and click "Cancel My Service."</p>
+		
+	<h2>Welcome E-mail &amp; Free eBook</h2>
+<p>You will receive a welcome email and a free copy of <em>Start Your Little Engines</em>, an e-cookbook
+    loaded with breakfast recipes shortly thereafter.</p>
+	<h2>Login &amp; Create Fabulous Meals</h2>
+		 <p>Login to see current meal plans. Use them as they are or easily customize them. Print your shopping
+         list (it changes to match your customizations) and you're ready to shop for the ingredients you need
+         to create fabulous, easy meals for your family.</p>
+	<h2>Weekly Meal Plans</h2>
+	<p>Every Wednesday you'll receive an email with a family fun dessert recipe, kitchen hint, and a link to 5
+      completely new meal plans with menus, easy recipes, and an organized shopping list.</p>
+
+	</td>
+<td id="checkoutArea" valign="top">
+   <%= start_form_tag({:action => 'submit_signup'}, {:id => 'signup_form', :name => 'signup_form'}) %>
+		<div id="promo"><p><img src="/images-pm/30-day-trial.jpg" alt="FREE No-risk 30-day Trial" /></p>
+			<input id="user_referrer_id" name="user[referrer_id]" type="hidden" />
+			<%= radio_button_tag 'offer', 'monthly', true %>
+			<label for="offer">Free 14-day Trial &amp; Breakfast eBook.<br/><strong>Monthly subscription</strong>
+          of $4.95 afterwards
+			<br />(You can <a href="/ebtchef-cancel-popup.html" rel="popup|400|300">cancel</a> at any time).</label><br/><br/>
+			<input id="user_referrer_id" name="user[referrer_id]" type="hidden" />
+			<%= radio_button_tag 'offer', 'yearly', false %>
+			<label for="yearlyoffer">Free 14-day Trial &amp; Breakfast eBook.<br/><strong>Yearly subscription</strong>
+          of $49.95 afterwards<br/>(saves you 15% over monthly subscription).</label><br/><br/>
+		</div>
+		<%= error_messages_for( :user, :header => ['h2', 'Sorry, please correct these errors below to complete sign up'] ) %>
+		<div id="userinfo">
+			<label for="user_email" class="labelAlign">Email</label><%= text_field 'user', 'email', :size => 25%>
+			
+			<label for="user_confirm_email" class="labelAlign">Confirm Email</label><%= text_field 'user', 'email_confirmation', :size => 25 %>
+			
+			<label for="user_password" class="labelAlign">Password</label><%= password_field  'user', 'password', :size => 25 %>
+			
+			<label for="user_confirm_password" class="labelAlign extraLine">Confirm Password</label><%= password_field  'user', 'password_confirmation', :size => 25,:class => "extraLine"%>
+			
+			<label for="user_first_name" class="labelAlign">First Name</label><%= text_field 'user', 'first_name', :size => 25 %>
+			
+			<label for="user_last_name" class="labelAlign">Last Name</label><%= text_field 'user', 'last_name', :size => 25 %>
+<!--
+		  <label for="user_address" class="labelAlign">Address</label><%#= text_field 'user', 'address', :size => 25 %>
+			
+			<label for="user_city" class="labelAlign">City</label><%#= text_field 'user', 'city', :size => 25 %>
+			
+			<label for="user_state" class="labelAlign">State</label><%#= text_field 'user', 'state', :maxlength => 2, :size => 25 %>
+			
+			<label for="user_zip" class="labelAlign">Zip/Postal Code</label><%#= text_field 'user', 'zip', :size => 25 %>
+-->
+			<div class="clear"></div>
+		</div>
+<!--
+		<div id="select_payment_method">
+			<%#= radio_button 'user', 'credit_or_check', 'credit', :size => 18, :onclick => 'show_creditcard(); hide_check();' %> Credit Card
+			<%#= radio_button 'user', 'credit_or_check', 'check', :size => 18, :onclick => 'show_check(); hide_creditcard();' %> Electronic Check
+		</div>
+		
+		<div id="creditcard_section">
+			<label for="user_credit_card_number" class="labelAlign">Credit Card Number</label><%#= text_field 'user', 'credit_card_number', :maxlength => 16, :size => 25 %>
+			
+			<label for="user_credit_card_verification" class="labelAlign">Verification Number</label>
+			<input id="user_credit_card_verification" maxlength="4" name="user[credit_card_verification]" size="4" type="text" />
+			<p class="floatOpposite">(<%#= link_to 'help?', { :action => "cvv_help" }, :rel => 'popup|570|235'%>)</p>
+			<div class="clear"></div>
+			
+			<label for="user_cc_exp" class="labelAlign">Expiration Date</label>
+			<%#= select_tag 'user[ccexp_month]', options_for_select(get_select_months, @user.ccexp_month.to_i) %>
+			<%#= select_tag 'user[ccexp_year]', options_for_select(get_select_years, @user.ccexp_year.to_i) %>
+		</div>
+		
+		<div id="checking_section">
+			<label for="user_phone" class="labelAlign">Phone Number</label>
+			<%#= text_field 'user', 'phone', :size => 25, :disabled => true %>
+			
+			<label for="user_routing_number" class="labelAlign">Bank Routing #</label>
+			<%#= text_field 'user', 'routing_number', :size => 25, :disabled => true %>
+			
+			<label for="user_checking_account" class="labelAlign">Checking Account #</label>
+			<%#= text_field 'user', 'checking_account', :size => 25, :disabled => true %>
+		</div>
+        <%#=
+          if @user.credit_or_check == 'credit'
+            javascript_tag( "show_creditcard(); hide_check(); $('user_credit_or_check_credit').selected = true;" )
+          else
+            javascript_tag( "show_check(); hide_creditcard(); $('user_credit_or_check_check').selected = true;" )
+          end
+        %>
+		<br/>
+-->
+		<a href="#" onclick="document.signup_form.submit(); return false;" class="buttonStyle1 float">Start Trial!</a>
+		 <!-- <img class="floatOpposite" alt="Amex" src="/images-pm/amex.jpg" /><img class="floatOpposite" alt="Visa/MC" src="/images-pm/visa-mc.jpg" /> -->
+		 <div class="clear"></div>
+	<%= end_form_tag %>
+</td>
+</tr>
+</table>

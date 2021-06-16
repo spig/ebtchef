@@ -1,0 +1,125 @@
+<style>
+label {
+  float: left;
+  font-size: .8em;
+  width: 90px;
+}
+.subscrip {
+  float: none;
+  font-size: 9pt;
+  width: 100%;
+}
+</style>
+<div id="page_header"><%= image_tag 'member/myaccount_header', :alt => "My Account", :class => 'page_header' %></div>
+  <%= error_messages_for :user %>
+  <div class="notice"><%= flash[:notice] ? flash[:notice] : '' %></div>
+  <% unless @user.on_hold %>
+  <p>
+    This page can be used to update and keep your personal information current. You can change your password and email
+    address. Please keep your information current so that we may serve you to the best of our ability.
+  </p>
+  <br />
+  <p>
+    Note: If you change email addresses it is important that you update it here, otherwise your notice of new meals will go
+    to the old email address and possibly miss you…..And the <em>Chef</em> doesn't want that!
+  </p>
+  <br />
+  <%= start_form_tag :action => 'update' %>
+  <div class="form_element">
+    <label for="user[first_name]">First Name</label>
+    <%= text_field :user, :first_name, :size => 25 %>
+  </div>
+  <div class="form_element">
+    <label for="user[last_name]">Last Name</label>
+    <%= text_field :user, :last_name, :size => 25 %>
+  </div>
+  <div class="form_element">
+    <label for="user[email]">Email</label>
+    <%= text_field :user, :email, :size => 25 %>
+  </div>
+  <div class="form_element">
+    <label for="user[email_confirmation]">Confirm Email</label>
+    <%= text_field :user, :email_confirmation, :size => 25 %>
+  </div>
+  <div class="form_element">
+    <label for="user[address]">Address</label>
+    <%= text_field :user, :address, :size => 25 %>
+  </div>
+  <div class="form_element">
+    <label for="user[city]">City</label>
+    <%= text_field :user, :city, :size => 25 %>
+  </div>
+  <div class="form_element">
+    <label for="user[state]">State</label>
+    <%= text_field :user, :state, :size => 25, :maxlength => 2 %>
+  </div>
+  <div class="form_element">
+    <label for="user[zip]">Zip</label>
+    <%= text_field :user, :zip, :size => 25 %>
+  </div>
+  <table>
+      <tr>
+          <td colspan="2" style="font-size: .8em;">Last Billed Date: <%= @user.last_billed_on || 'Never' %></td>
+      </tr>
+      <tr>
+          <td colspan="2" style="font-size: .8em;">Next Billing Date: <%= @user.next_billing_on %></td>
+      </tr>
+      <tr>
+          <td><%= radio_button_tag 'user[recurrence]', 'monthly', @user.recurrence == 'monthly', :id=>'user[recurrence][monthly]' %></td>
+          <td style="font-size: .8em;"><label class="subscrip" for="user[recurrence][monthly]">Monthly subscription of $4.95</label></td>
+      </tr>
+      <tr>
+          <td><%= radio_button_tag 'user[recurrence]', 'yearly', @user.recurrence == 'yearly', :id=>'user[recurrence][yearly]' %></td>
+          <td style="font-size: .8em;"><label class="subscrip" for="user[recurrence][yearly]">Yearly subscription of $49.95</label>
+              <br/>(saves you 15% over monthly subscription)</td>
+      </tr>
+  </table>
+  <p style="font-size: .8em;">Pay by either <%= radio_button_tag 'payment_method', '', (@user.ccnum and @user.ccnum.size > 0), :onclick => "$('credit_card_info').show(); $('user_ccnum').disabled = false; $('electronic_check_info').hide(); $('user_routing_number').disabled = true; $('user_checkacct').disabled = true; $('user_phone').disabled = true;" %> Credit Card or <%= radio_button_tag 'payment_method', '', (@user.checkacct and @user.checkacct.size > 0), :onclick => "$('credit_card_info').hide(); $('user_ccnum').disabled = true; $('electronic_check_info').show(); $('user_routing_number').disabled = false; $('user_checkacct').disabled = false; $('user_phone').disabled = false;" %> Electronic Check</p>
+  <div id="credit_card_info">
+    <div class="form_element">
+      <label for="user[ccnum]">Credit Card #</label>
+      <%= text_field :user, :ccnum, :size => 25 %>
+    </div>
+    <div class="form_element">
+      <label for="user[cc_exp]">CC Exp</label>
+      <%= date_select :user, :cc_exp, :discard_day => true %>
+    </div>
+  </div>
+  <div id="electronic_check_info">
+    <div class="form_element">
+      <label for="user[routing_number]">Routing Number</label>
+      <%= text_field :user, :routing_number, :size => 25 %>
+    </div>
+    <div class="form_element">
+      <label for="user[checkacct]">Checking Account</label>
+      <%= text_field :user, :checkacct, :size => 25 %>
+    </div>
+    <div class="form_element">
+      <label for="user[phone]">Phone</label>
+      <%= text_field :user, :phone, :size => 25 %>
+    </div>
+  </div>
+  <%= javascript_tag("$('credit_card_info').show(); $('user_ccnum').disabled = false; $('electronic_check_info').hide(); $('user_routing_number').disabled = true; $('user_checkacct').disabled = true; $('user_phone').disabled = true;") if @user.ccnum and @user.ccnum.size > 0 %>
+  <%= javascript_tag("$('credit_card_info').hide(); $('user_ccnum').disabled = true; $('electronic_check_info').show(); $('user_routing_number').disabled = false; $('user_checkacct').disabled = false; $('user_phone').disabled = false;") if @user.checkacct and @user.checkacct.size > 0 %>
+  <div style="color: #c00; background-color: #fff;">Leave password fields blank unless you want to change your password.</div>
+  <div class="form_element">
+    <label for="user[password]">New Password</label>
+    <%= password_field :user, :password, :size => 25 %>
+  </div>
+  <div class="form_element">
+    <label for="user[password_confirmation]">Confirm Password</label>
+    <%= password_field :user, :password_confirmation, :size => 25 %>
+  </div>
+  <div class="form_element">
+    <label for="user[send_weekly_reminder]">Send Newsletter</label>
+    <%= check_box :user, :send_weekly_reminder %>
+  </div>
+  <br/>
+  <div align="center"><%= submit_tag 'Update My Account' %></div>
+  <div class="form_element" align="right">
+    <%= link_to 'Cancel My Service', :action => 'cancel' %>
+  </div>
+  <%= end_form_tag %>
+  <% else %>
+  <%= render :partial => 'on_hold' %>
+  <% end %>

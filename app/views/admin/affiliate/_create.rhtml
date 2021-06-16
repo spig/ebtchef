@@ -1,0 +1,35 @@
+<hr/>
+<%= error_messages_for( :user,:affiliate, :header => ['h2', 'Sorry, please correct these errors below to complete sign up'] ) %>
+
+<h1>Add a New Affiliate</h1>
+<%= start_form_tag :action => "create" %>
+<p>*Required</p>
+<label for="affiliate[name]">*Affiliate Name:</label>
+<%= text_field 'affiliate', 'name' %><br/>
+<label for="affiliate[contact_first_name]">*Contact First Name:</label>
+<%= text_field 'affiliate', 'contact_first_name' %><br/>
+<label for="affiliate[contact_last_name]">*Contact Last Name:</label>
+<%= text_field 'affiliate', 'contact_last_name' %><br/>
+<label for="affiliate[contact_address]">*Address:</label>
+<%= text_field 'affiliate', 'contact_address' %><br/>
+<label for="affiliate[contact_city]">*Contact City:</label>
+<%= text_field 'affiliate', 'contact_city' %><br/>
+<label for="affiliate[contact_state]">*Contact State:</label>
+<%= text_field 'affiliate', 'contact_state' %><br/>
+<label for="affiliate[contact_zip]">*Contact Zip:</label>
+<%= text_field 'affiliate', 'contact_last_zip' %><br/>
+<label for="affiliate[contact_email]">*Contact Email:</label>
+<%= text_field 'affiliate', 'contact_email' %><br/>
+<label for="affiliate[password]">Password:</label>
+<%= password_field 'affiliate', 'password', :size => 18 %><br/>
+<label for="affiliate[confirm_password]">Confirm Password</label>
+<%= password_field 'affiliate', 'password_confirmation', :size => 18 %><br/>
+
+<h3>Optional</h3>
+<label for="affiliate[promo_price]">Promotional Price:</label>
+<%= text_field 'affiliate', 'promo_price', :size => "10" %><br/>
+<label for="affiliate[promo_days_to_first_billing]">Days Till First Billing</label>
+<select name="affiliate[promo_days_to_first_billing]"><%= options_for_select({"0" => "0", "30" => "30","60" => "60"},"30") %></select><br/>
+<br/>
+<%= submit_tag 'Add New Affiliate' %>
+<%= end_form_tag %>

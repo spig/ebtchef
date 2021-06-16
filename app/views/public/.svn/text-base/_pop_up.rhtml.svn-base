@@ -1,0 +1,8 @@
+<div id="fadeinbox" style="filter:progid:DXImageTransform.Microsoft.RandomDissolve(duration=1) progid:DXImageTransform.Microsoft.Shadow(color=gray,direction=135) ; -moz-opacity:0">
+  <center style="margin-top: 10px;">
+        <a href="https://ebtchef.com/public/signup?affid=direct&utm_source=direct&e=&c=direct&h=-853630532"><%= image_tag "../images/chef_pop_up.gif", :id => 'no_link',:alt => "30 days Free" %></a>
+    </center>
+  <div align="right">
+    <a href="#" class="txt12" onclick="hidefadebox();return false">Hide This Box</a>
+  </div>
+</div>

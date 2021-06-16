@@ -1,0 +1,21 @@
+<div id="page_header"><%= link_to image_tag('member/printer_friendly', :alt => 'Printer Friendly', :style => 'float: right; border: 0px; margin-right: 10px;'), "javascript: window.print();" %><img alt="Your weekly meal plans" class="page_header" src="/images/public/examplemealplans_header.png" /></div>
+<div id="meals_menu">
+
+  <ul>
+    <li><%= link_to_unless_current image_tag('member/meal_plan', :alt => "Meal Plans", :style=> "border: 0px;") + ' Meal Plans', '/public/example_meal_plan' %></li>
+    <li>| <%= link_to_unless_current image_tag('member/shopping_cart', :alt => "Shopping List", :style=> "border: 0px;") + ' Shopping List', '/public/example_shopping_list' %></li>
+    <li>| <a href="javascript: alert('Favorites are meal plans that your family enjoys and that you have added from one of the meal plans.\n\nBecome a member today to see how easy it is to customize our meal plans for your family!');" title="Become a member today and see how easy this is!"><img alt="Favorites" style="border: 0px;" src="/images/member/heart.png" /> Favorites</a></li>
+    <li>|&nbsp;&nbsp; <a href="javascript: alert('Become a member today to see how easy it is to customize our meal plans for your family!');" title="Become a member today and see how easy this is!">Learn How the Meal Plans Work</a></li>
+  </ul>
+</div>
+<!--<div id="meal_week">Aug 02 - Aug 08</div>-->
+<p>
+<div>
+<%= render :partial => @partial %>
+</div>
+
+</p>
+
+      </div>
+      <br style="clear: both; height: 0px;" />
+    </div>

@@ -1,0 +1,5 @@
+<h3>Edit Ingredient</h3>
+<%= start_form_tag :action => 'update', :id => @ingredient.id %>
+<%= render :partial => 'form' %>
+<%= submit_tag 'Update' %>
+<%= end_form_tag %>

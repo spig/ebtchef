@@ -1,0 +1,39 @@
+<div id="page_header"><%= image_tag 'member/myaccount_header', :alt => "My Account", :class => 'page_header' %></div>
+  <%= error_messages_for 'user' %>
+  <div class="notice"><%= flash[:notice] ? flash[:notice] : '' %></div>
+  <div>
+  <p>So we can better serve future customers, please take one moment (that's all!) to let us know the reason you are doing so. Thank-you so much.</p>
+  </div>
+<% form_for :user, @user, :url => { :action => 'cancel' } do |f| %>
+  <script language="JavaScript">
+  function other(selObj)
+  {
+  if(selObj.options[selObj.selectedIndex].value == 'Other')
+  {
+  //Show the textbox
+  document.getElementById("cancel_div").style.visibility = 'visible';
+  document.getElementById("cancel_div").style.display = '';
+  }
+  else
+  {
+  //Hide the textbox
+  document.getElementById("cancel_div").style.visibility = 'hidden';
+  document.getElementById("cancel_div").style.display = 'none';
+
+  }
+  }
+  </script>
+  <h3>Cancel Reasons:</h3>
+  <select name="cancel" onchange="javascript:other(this);">
+    <% for opt in User::CANCEL_REASONS %>
+    <option value="<%= opt %>"><%= opt %></option>
+    <% end %>
+  <%#= options_for_select(User::CANCEL_REASONS) %>
+  </select>
+  <div id="cancel_div" style="margin: 5px; visibility: hidden; display: none;">
+    <label for="other">Please Explain:</label><br />
+    <%= text_area_tag "cancel_tb", nil, :size => "60x10" %>
+  </div>
+<p>Once you have responded, click "Cancel" to confirm cancellation....we'll miss you!</p>
+<%= submit_tag "Cancel", :class => "submit" %>
+  <% end %>

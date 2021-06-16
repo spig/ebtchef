@@ -1,0 +1,7 @@
+<div id="recipe_ingredients">
+  <%= form_tag :action => 'update_recipe_ingredient', :id => @ri.id %>
+  <h3>Edit Ingredient</h3>
+  <%= render :partial => 'recipe_ingredient_form', :locals => { :recipe_ingredient => @ri, :ingredient => @ingredient, :ingredient_category => @ingredient_category } %>
+  <div><%= submit_tag 'Update' %></div>
+  <%= end_form_tag %>
+</div>

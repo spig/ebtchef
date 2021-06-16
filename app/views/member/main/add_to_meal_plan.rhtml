@@ -1,0 +1,10 @@
+<div id="favorites">
+<% if @favorites.size > 0 -%>
+Click on the favorite you would like to add to your meal plan.
+<% @favorites.each do |favorite| -%>
+  <p class="favorite" id="favorite_recipe_<%= favorite.id %>"><%= link_to favorite.name, :action => 'add_to_meal_plan', :id => @meal_plan_id, :favorite => favorite.id %></p>
+<% end %>
+<% else -%>
+<p>There are no favorites to add to your meal plan.  <%= link_to 'Return to this weeks meal plans', :controller => '/member/main' %>.</p>
+<% end -%>
+</div>

@@ -1,0 +1,42 @@
+<div style="position: 25 0 25 0;">
+  <%= form_tag :action => "clear_sessions" %>
+  <h2>Session Clear Tool</h2>
+    <p>Delete sessions that were last updated
+      <select name="interval"><%= options_for_select(["20","30","40","50","60","120"],"120") %></select>
+     minutes ago.
+    </p>
+      <%= submit_tag 'Execute' %>
+    <%= end_form_tag %>
+
+</div>
+<p><hr /></p>
+<div>
+  <h2>Affiliate Tracking Tool</h2>
+  <table>
+    <tr class="ListTitle">
+      <th>Name</th>
+      <th>Referral URL</th>
+      <th>Campaign URL</th>
+      <th>Signup URL</th>
+      <th>Referral URL + promo</th>
+      <th>Campaign URL + promo</th>
+      <th>Signup URL + promo</th>
+      <th>Promo extra</th>
+    </tr>
+  <% @affiliates.each do |a| %>
+    <tr valign="top" class="ListLine0" style="text-align:right">
+      <td><%= a.name %></td>
+      <td><%= link_to a.referral_url(request).to_s[0..20]+'...', a.referral_url(request) %></td>
+      <td><%= link_to a.campaign_url(request, Time.now.strftime("%y%m%d")).to_s[0..20]+'...', a.campaign_url(request, Time.now.strftime("%y%m%d")) %></td>
+      <td><%= link_to a.signup_url(request).to_s[0..20]+'...', a.signup_url(request) %></td>
+      <td><%= link_to a.referral_url(request).to_s[0..20]+'...', a.referral_url(request) + "&e=&c=#{a.name}&h=#{Promo.gen_hash(a.name, '')}" %></td>
+      <td><%= link_to a.campaign_url(request, Time.now.strftime("%y%m%d")).to_s[0..20]+'...', a.campaign_url(request, Time.now.strftime("%y%m%d")) + "&e=&c=#{a.name}&h=#{Promo.gen_hash(a.name, '')}" %></td>
+      <td><%= link_to a.signup_url(request).to_s[0..20]+'...', a.signup_url(request) + "&e=&c=#{a.name}&h=#{Promo.gen_hash(a.name, '')}" %></td>
+      <td><%= "&e=&c=#{a.name}&h=#{Promo.gen_hash(a.name, '')}" %></td>
+    </tr>
+  <% end %>
+  </table>
+  <div>
+    <%#= render :partial => 'create' %>
+  </div>
+</div>

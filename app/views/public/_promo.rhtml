@@ -1,0 +1,8 @@
+        <div class="clearfix">
+          <div id="monthly_promo"><label for="offer_monthly">Sign me up for a <span style="font-weight: bold;">monthly subscription</span> of only $4.95 (more than 50% savings off original price). I will be billed $4.95 a month.</label></div>
+          <%= radio_button_tag 'offer', 'monthly', true %>
+        </div>
+        <div class="clearfix">
+          <div id="yearly_promo"><label for="offer_yearly">Sign me up for a <span style="font-weight: bold;">yearly subscription</span>. I will be billed $49.95 only once a year (more than 15% savings over the lowered monthly subscription rate).</label></div>
+          <%= radio_button_tag 'offer', 'yearly', false %>
+        </div>

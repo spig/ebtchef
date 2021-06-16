@@ -1,0 +1,23 @@
+dr = request["DOCUMENT_ROOT"]
+
+if file_isreg(dr .. "maintainance.html") then
+  output_include = { dr .. "maintainance.html" }
+  return CACHE_HIT
+end
+
+f = request["REQUEST_URI"]
+
+if f  "/" or f  "" then
+  file = dr .. "index.html" 
+elseif not string.find(f, "%.") then  -- rewrite for cached pages
+  file = dr .. f .. ".html" 
+else
+  file = dr .. f
+end
+
+if file_isreg(file) then
+  output_include = { file }
+  return CACHE_HIT
+end
+
+return 1     -- should be CACHE_MISS, but there's a bug in 1.4.10

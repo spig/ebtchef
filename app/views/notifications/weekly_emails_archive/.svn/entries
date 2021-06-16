@@ -1,0 +1,55 @@
+8
+
+dir
+227
+svn://ebtchef.com:3691/trunk/app/views/notifications/weekly_emails_archive
+svn://ebtchef.com:3691
+
+
+
+2007-09-05T13:55:15.922471Z
+32
+wvoll
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+d0e37886-a427-0410-bba9-d5af18d9fb2f
+
+20060920
+dir
+
+weekly.text.html.rhtml
+file
+
+
+
+
+2008-02-22T03:40:49.000000Z
+2aba8bbf2afb09a9309102985dc31e45
+2007-09-05T13:55:15.922471Z
+32
+wvoll
+
+weekly_nonsub.text.plain.rhtml
+file
+
+
+
+
+2008-02-22T03:40:49.000000Z
+270f34b3ae0beb095dadac8d8e66c086
+2007-02-24T08:05:51.252060Z
+20
+wvoll
+

@@ -1,0 +1,27 @@
+require 'net/smtp'
+
+to_email = 'spig@spig.net'
+
+message = <<MESSAGE
+From: jeff@ebtchef.com
+To: #{to_email}
+Subject: Your Answers to our Survey Helped!
+Content-Type: text/html
+
+Dear Everything but the Chef member,
+<br/>
+<br/> 
+<br/>
+A few weeks ago you answered some questions regarding our service at <em>Everything but the Chef<em>. May we thank you again and inform you that the information gathered was so beneficial to us that we decided to make several changes to improve the service. Because of this enhancement, major functional changes must be made, and are currently being made, to our website. We are confident you will like them! They are not quite finished but we anticipate they will be within 2-4 weeks.
+<br/>
+<br/> 
+<br/>
+When you took the <em>Chef</em> survey you were promised a coupon by the end of this month (May) that would allow you to receive our service at the low rate of just $3.95. As our site changes are not quite complete, please watch for this coupon to come into your inbox in June. Thanks for your help and patience on this matter.
+<br/>
+<br/> 
+<br/>
+As always, Best to you in your family mealtime adventures,
+<br/>
+<br/>
+<img src="jeff_director.jpg">
+MESSAGE

@@ -1,0 +1,154 @@
+<table>
+    <tr>
+        <td align="center">
+            <table>
+                <tr>
+                    <th style="text-align:right">Averages Since:</th>
+                    <td><%= @start_date.strftime "%B %d, %Y" %></td>
+                </tr>
+                <tr>
+                    <th style="text-align:right">Conversions:</th>
+                    <td><%= @average_conversions %></td>
+                </tr>
+                <tr>
+                    <th style="text-align:right">No CC Trials:</th>
+                    <td><%= @total_nocc_trials %> total, <%= @total_nocc_conversions %> conversions, <%= @percent_nocc_conversions %></td>
+                </tr>
+                <tr>
+                    <th style="text-align:right">Members:</th>
+                    <td><%= @average_members %> per month</td>
+                </tr>
+                <tr>
+                    <th style="text-align:right">Months:</th>
+                    <td><%= @average_months %> per user</td>
+                </tr>
+                <tr>
+                    <th style="text-align:right">Revenue:</th>
+                    <td><%= @average_month_revenue %> per month</td>
+                </tr>
+                <tr>
+                    <th style="text-align:right">Revenue:</th>
+                    <td><%= @average_user_revenue %> per user</td>
+                </tr>
+            </table>
+        </td>
+        <td rowspan="2" align="center">
+          <h2>Paid Membership Conversions</h2>
+          <table>
+            <!--tr class="ListTitle">
+              <th></th>
+              <th>Total</th-->
+              <!--th>Shanes Page</th>
+              <th>SAVE Page</th>
+              <th>Penny Page</th>
+              <th>Direct</th-->
+            <!-/tr-->
+            <!--tr valign="top" class="ListLine0" style="text-align:right">
+              <td>Today:</td>
+              <td><%#= @todays_conversions.size %> of <%#= @todays_total %> (<%#= @todays_percent %>%)</td-->
+              <!--td><%#= @todays_conversions.select{|u| u.layout_used =~ /shanes_page/}.size %></td>
+              <td><%#= @todays_conversions.select{|u| u.layout_used =~ /index_0/}.size %></td>
+              <td><%#= @todays_conversions.select{|u| u.layout_used =~ /index_1/}.size %></td>
+              <td><%#= @todays_conversions.select{|u| u.layout_used.blank?}.size %></td-->
+            <!--/tr-->
+            <tr valign="top" class="ListLine1" style="text-align:right">
+              <td>This week:</td>
+              <td><%= @this_weeks_conversions.size %> of <%= @this_weeks_total %> (<%= @this_weeks_percent %>%)</td>
+              <!--td><%#= @this_weeks_conversions.select{|u| u.layout_used =~ /shanes_page/}.size %></td>
+              <td><%#= @this_weeks_conversions.select{|u| u.layout_used =~ /index_0/}.size %></td>
+              <td><%#= @this_weeks_conversions.select{|u| u.layout_used =~ /index_1/}.size %></td>
+              <td><%#= @this_weeks_conversions.select{|u| u.layout_used.blank?}.size %></td-->
+            </tr>
+            <tr valign="top" class="ListLine0" style="text-align:right">
+              <td>Last Week:</td>
+              <td><%= @last_weeks_conversions.size %> of <%= @last_weeks_total %> (<%= @last_weeks_percent %>%)</td>
+              <!--td><%#= @last_weeks_conversions.select{|u| u.layout_used =~ /shanes_page/}.size %></td>
+              <td><%#= @last_weeks_conversions.select{|u| u.layout_used =~ /index_0/}.size %></td>
+              <td><%#= @last_weeks_conversions.select{|u| u.layout_used =~ /index_1/}.size %></td>
+              <td><%#= @last_weeks_conversions.select{|u| u.layout_used.blank?}.size %></td-->
+            </tr>
+              <tr valign="top" class="ListLine1" style="text-align:right">
+                <td>Previous Week:</td>
+                <td><%= @prev_weeks_conversions.size %> of <%= @prev_weeks_total %> (<%= @prev_weeks_percent %>%)</td>
+                <!--td><%#= @prev_weeks_conversions.select{|u| u.layout_used =~ /shanes_page/}.size %></td>
+                <td><%#= @prev_weeks_conversions.select{|u| u.layout_used =~ /index_0/}.size %></td>
+                <td><%#= @prev_weeks_conversions.select{|u| u.layout_used =~ /index_1/}.size %></td>
+                <td><%#= @prev_weeks_conversions.select{|u| u.layout_used.blank?}.size %></td-->
+              </tr>
+              <% (0..12).each do |month| %>
+            <tr valign="top" class="ListLine<%= month % 2 %>" style="text-align:right">
+              <td><%= @last_months_name[month] %>:</td>
+              <td><%= @last_months_conversions[month].size %> of <%= @last_months_total[month] %> (<%= @last_months_percent[month] %>%)</td>
+              <!--td><%#= (@last_months_conversions[month]).select{|u| u.layout_used =~ /shanes_page/}.size %></td>
+              <td><%#= (@last_months_conversions[month]).select{|u| u.layout_used =~ /index_0/}.size %></td>
+              <td><%#= (@last_months_conversions[month]).select{|u| u.layout_used =~ /index_1/}.size %></td>
+              <td><%#= (@last_months_conversions[month]).select{|u| u.layout_used.blank?}.size %></td-->
+            </tr>
+                  <% end %>
+          </table>
+        </td>
+    </tr>
+    <tr>
+        <td valign="top" align="center">
+            <h2>Free Signups</h2>
+            <table>
+              <!--tr class="ListTitle">
+                <th></th>
+                <th>Total</th-->
+                <!--th>Shanes Page</th>
+                <th>SAVE Page</th>
+                <th>Penny Page</th>
+                <th>Direct</th-->
+              <!--/tr-->
+              <tr valign="top" class="ListLine0" style="text-align:right">
+                <td>Today:</td>
+                <td><%= @todays_users.size %></td>
+                <!--td><%#= @todays_users.select{|u| u.layout_used =~ /shanes_page/}.size %></td>
+                <td><%#= @todays_users.select{|u| u.layout_used =~ /index_0/}.size %></td>
+                <td><%#= @todays_users.select{|u| u.layout_used =~ /index_1/}.size %></td>
+                <td><%#= @todays_users.select{|u| u.layout_used.blank?}.size %></td-->
+              </tr>
+              <tr valign="top" class="ListLine1" style="text-align:right">
+                <td>This week:</td>
+                <td><%= @this_weeks_users.size %></td>
+                <!--td><%#= @this_weeks_users.select{|u| u.layout_used =~ /shanes_page/}.size %></td>
+                <td><%#= @this_weeks_users.select{|u| u.layout_used =~ /index_0/}.size %></td>
+                <td><%#= @this_weeks_users.select{|u| u.layout_used =~ /index_1/}.size %></td>
+                <td><%#= @this_weeks_users.select{|u| u.layout_used.blank?}.size %></td-->
+              </tr>
+              <tr valign="top" class="ListLine0" style="text-align:right">
+                <td>Last Week:</td>
+                <td><%= @last_weeks_users.size %></td>
+                <!--td><%#= @last_weeks_users.select{|u| u.layout_used =~ /shanes_page/}.size %></td>
+                <td><%#= @last_weeks_users.select{|u| u.layout_used =~ /index_0/}.size %></td>
+                <td><%#= @last_weeks_users.select{|u| u.layout_used =~ /index_1/}.size %></td>
+                <td><%#= @last_weeks_users.select{|u| u.layout_used.blank?}.size %></td-->
+              </tr>
+              <tr valign="top" class="ListLine1" style="text-align:right">
+                <td>Previous Week:</td>
+                <td><%= @prev_weeks_users.size %></td>
+                <!--td><%#= @prev_weeks_users.select{|u| u.layout_used =~ /shanes_page/}.size %></td>
+                <td><%#= @prev_weeks_users.select{|u| u.layout_used =~ /index_0/}.size %></td>
+                <td><%#= @prev_weeks_users.select{|u| u.layout_used =~ /index_1/}.size %></td>
+                <td><%#= @prev_weeks_users.select{|u| u.layout_used.blank?}.size %></td-->
+              </tr>
+              <tr valign="top" class="ListLine0" style="text-align:right">
+                <td>This Month:</td>
+                <td><%= @months_users.size %></td>
+                <!--td><%#= @months_users.select{|u| u.layout_used =~ /shanes_page/}.size %></td>
+                <td><%#= @months_users.select{|u| u.layout_used =~ /index_0/}.size %></td>
+                <td><%#= @months_users.select{|u| u.layout_used =~ /index_1/}.size %></td>
+                <td><%#= @months_users.select{|u| u.layout_used.blank?}.size %></td-->
+              </tr>
+              <tr valign="top" class="ListLine1" style="text-align:right">
+                <td>Last Month:</td>
+                <td><%= @last_months_users.size %></td>
+                <!--td><%#= @last_months_users.select{|u| u.layout_used =~ /shanes_page/}.size %></td>
+                <td><%#= @last_months_users.select{|u| u.layout_used =~ /index_0/}.size %></td>
+                <td><%#= @last_months_users.select{|u| u.layout_used =~ /index_1/}.size %></td>
+                <td><%#= @last_months_users.select{|u| u.layout_used.blank?}.size %></td-->
+              </tr>
+            </table>
+        </td>
+    </tr>
+</table>

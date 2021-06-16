@@ -1,0 +1,7 @@
+<div id="recipe_ingredients">
+  <%= form_remote_tag :url => { :action => 'add_ingredient_to_recipe', :id => @recipe.id }, :html => { :id => 'ingredient_form' } %>
+  <div>Add Ingredient</div>
+  <%= render :partial => 'recipe_ingredient_form', :locals => { :recipe_ingredient => RecipeIngredient.new(:recipe_id => @recipe.id), :ingredient => Ingredient.new, :ingredient_category => IngredientCategory.new } %>
+  <div><%= submit_tag 'Add' %></div>
+  <%= end_form_tag %>
+</div>

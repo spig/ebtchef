@@ -1,0 +1,23 @@
+<table>
+  <tr class="ListTitle">
+    <th>Name</th>
+    <th>Email</th>
+    <th>CC EXP</th>
+    <th>Last Billing Response</th>
+    <th>Last Billed On</th>
+    <th>Failed Notice Count</th>
+    <th>Affiliate ID</th>
+  </tr>
+<% @failed_billings.each do |fb| %>
+<% cycle = cycle('0','1') %>
+<tr valign="top" class="ListLine<%= cycle %>" style="text-align:right">
+<td><%= "#{fb.first_name} #{fb.last_name}" %></td>
+<td><%= "#{fb.email}" %></td>
+<td><%= "#{fb.cc_exp}" %></td>
+<td><%= fb.last_billing_response.gsub! /<!-- a:hover{color:#0080FF} -->/, "" %></td>
+<td><%= "#{fb.last_billed_on}" %></td>
+<td><%= "#{fb.failed_notice_count}" %></td>
+<td><%= "#{fb.affiliate_id}" %></td>
+</tr>
+<% end %>
+</table>

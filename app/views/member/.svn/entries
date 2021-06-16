@@ -1,0 +1,40 @@
+8
+
+dir
+227
+svn://ebtchef.com:3691/trunk/app/views/member
+svn://ebtchef.com:3691
+
+
+
+2008-05-21T04:13:25.294793Z
+220
+troy
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+d0e37886-a427-0410-bba9-d5af18d9fb2f
+
+application
+dir
+
+library
+dir
+
+main
+dir
+
+account
+dir
+

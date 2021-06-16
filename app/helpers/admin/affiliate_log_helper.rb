@@ -1,0 +1,2 @@
+module Admin::AffiliateLogHelper
+end

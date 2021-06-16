@@ -1,0 +1,5 @@
+production:
+  adapter: mysql
+  database: ebtchef
+  username: ebtchef
+  password: Mookey3Tory

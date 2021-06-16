@@ -1,0 +1,23 @@
+<body style="text-align: center;">
+	
+	<p style="border: 0; margin: 0;"><a href="http://ebtchef.com/member"><img alt="Everything but the Chef" src="http://ebtchef.com/images-layout/email-header.gif" style="margin: 0px; padding: 0px; border: 0px;"  /></a></p>
+	<p style="padding:0; border: 0; margin: 0;"><img alt="Simply delicious meals you can make" src="http://localhost:3000/images/emails/weekly/delicious_meals.png" style="margin: 0px; padding: 0px;" /></p>
+	
+	<div style="margin:5px auto 5px auto;padding: 15px 40px; width: 438px; text-align: left; border:1px solid #d7c59f; font-family: arial, verdana, helvetica, sans-serif;font-size: .8em; color: #333; background-color: #fff; word-spacing: .25em; line-height: 1.3em;">        <h3>Congratulations, You Just Earned a FREE Month of Chef Service!</h3>
+        <p style="margin: 15px auto;">
+          Dear <%= @referrer.first_name.capitalize %>,
+        </p>
+        <p style="margin: 15px auto;">
+          <span style="color: #5c020a; font-weight: bold;">Great news. Your friend  <%= @referred.first_name + " " + @referred.last_name  %> just signed up to be a member of <i>Everything but the Chef</i>. This means your next billing date has been pushed back to <%= @referrer.next_billing_on.to_formatted_s(:long)  %>. Don't forget to tell all your friends about us and keep those FREE months coming. Thanks!</span>
+        </p>
+        <p style="margin: 15px auto;">
+          Best to you in your cooking adventures and remember, <i>Chef</i> helps build strong families one meal at a time! 
+        </p>
+        <p style="margin: 10px auto 30px; color: #5c020a;">
+          The Chef
+        </p>
+      </div>
+      <img src="http://ebtchef.com/images-layout/email-footer.gif" />
+    </div>
+  </div>
+</body>

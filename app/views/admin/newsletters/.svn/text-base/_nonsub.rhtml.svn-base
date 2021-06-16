@@ -1,0 +1,34 @@
+<div style="text-align: center;">
+  <style>
+    .MsoNormal {font:12px arial}
+    h4 {
+      margin-bottom:.0001pt;
+      text-align:center;
+      page-break-after:avoid;
+      font-size:12.0pt;
+      font-family:"Times New Roman"; margin-left:0in; margin-right:0in; margin-top:0in
+    }
+  </style>
+  <div style="width:524px; margin:0 auto; padding:0;">
+    <p style="border: 0; margin: 0;"><a href="http://ebtchef.com/ect?s=<%=@user.id%>&e=<%=@email_id%>&next=<%=u "http://ebtchef.com/member"%>"><img alt="Everything but the Chef Weekly Reminder" src="http://ebtchef.com/images-layout/email-header.gif" style="margin: 0px; padding: 0px; border: 0px;"  /></a></p>
+
+    <p style="padding:0; border: 0; margin: 0;"><img alt="Simply delicious meals you can make" src="http://ebtchef.com/images/emails/weekly/delicious_meals.png" style="margin: 0px; padding: 0px;" /></p>
+
+    <div style="margin:0 3px; padding: 15px 40px; text-align: left; border:1px solid #d7c59f; font-family: arial, verdana, helvetica, sans-serif;font-size: .8em; color: #333; background-color: #fff; word-spacing: .25em; line-height: 1.3em;">
+
+      <p style="font: 12px arial; color: #333;">Hello Friend,</p>
+      <p style="font: bold 12px arial; color: #45616c;">We are happy to notify you that this week's meal plans brought to you by <em>Everything but the Chef</em> are ready at <a href="http://ebtchef.com/ect?s=<%=@user.id%>&e=<%=@email_id%>&next=<%=u "https://ebtchef.com/member"%>" style="color: #45616c;">EbtChef.com</a></p>
+      <p style="font: 15px arial;">
+        <strong style="font: bold arial;">Chef meals are now FREE when you click
+          <a style="color: #5c020a;" href="http://ebtchef.com/ect?s=<%=@user.id%>&e=<%=@email_id%>&next=<%=u "https://ebtchef.com/public/signup?c=newsletter&e=#{@user.email}&h=#{Promo.gen_hash('newsletter', @user.email)}&affid=email#{@email_id}"%>">here</a> and sign up for a 14-day trial!
+        </strong>
+      </p>
+
+      <%= render :partial=>"#{@path}email" %>
+
+    </div>
+    <p style="border: 0; margin: 0;"><img src="http://ebtchef.com/images-layout/email-footer.gif" alt="Everything but the Chef - Helping you make family memories one meal at a time!" style="margin:0 auto;"></p>
+  </div>
+  <p><a href="http://ebtchef.com/unsubscribe?email=<%=h @user.email %>" style="font: 9px arial; color: #333;">Unsubscribe here</a>
+    <img src="http://ebtchef.com/etn?s=<%=@user.id%>&e=<%=@email_id%>" style="width: 1px; height: 1px;" /></p>
+</div>

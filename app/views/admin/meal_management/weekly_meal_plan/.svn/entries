@@ -1,0 +1,52 @@
+8
+
+dir
+227
+svn://ebtchef.com:3691/trunk/app/views/admin/meal_management/weekly_meal_plan
+svn://ebtchef.com:3691
+
+
+
+2007-02-24T08:05:51.252060Z
+20
+wvoll
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+d0e37886-a427-0410-bba9-d5af18d9fb2f
+
+list.rhtml
+file
+
+
+
+
+2008-02-22T03:40:48.000000Z
+3fab743a4b0bb77880a1c3ef6686fd95
+2007-02-24T08:05:51.252060Z
+20
+wvoll
+
+new.rhtml
+file
+
+
+
+
+2008-02-22T03:40:48.000000Z
+4f6c3dd3015f4fd0e502f7f4bc78bf25
+2007-02-24T08:05:51.252060Z
+20
+wvoll
+

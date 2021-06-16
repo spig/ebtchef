@@ -1,0 +1,4 @@
+<h1>Referrer List</h1>
+<% @referrers.each do |referrer| %>
+  <%= link_to referrer.host, :controller => '/admin/referrer_log', :id => referrer.id %><br />
+<% end %>

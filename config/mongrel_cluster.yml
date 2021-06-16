@@ -1,0 +1,6 @@
+--- 
+port: 8000-8002
+address: localhost
+pid_file: log/mongrel.pid
+servers: 3
+environment: production

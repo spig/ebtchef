@@ -1,0 +1,39 @@
+<%= flash[:notice] ? javascript_tag("alert(#{flash[:notice].to_json})") : '' %>
+<div id="logo_public_main">
+  <div id="home_link" onclick="javascript: document.location.href = '<%= h login_url %>'"><!-- --></div>
+<%= render :partial => 'login_form', :locals => { :login_button => 'index_0/login' } %>
+</div>
+<%= image_tag('/images/index_1/meals.jpg', :alt => "The Chef helps you make delicious meals") %>
+<%= image_tag('/images/index_0/we_plan_the_meals.jpg', :alt => 'We plan the meals - you cook them - through regular family meals find great friends - your kids!', :class => 'top_image') %>
+
+<%= image_tag('/images/index_0/mom_measure_son.jpg', :class => "left_column_image") %>
+<div id="save_time">
+  <div class="save_text">Save Time!</div>
+  Planning meals and shopping lists can take hours. Searching cookbooks and the Internet for recipes is overwhelming. Why waste your valuable time planning meals when we plan new, delicious meals and organized shopping lists for you every week of the year?
+  <div class="sign_up_now_link_area">
+    <%= link_to image_tag('/images/index_0/signup_now', :border => 0, :alt => 'sign up now'), :action => 'signup' %>
+    <%= link_to image_tag('/images/index_0/learn_more', :border => 0, :alt => 'learn more'), :action => 'learn_more' %>
+  </div>
+</div>
+
+<%= image_tag('/images/index_0/money.jpg', :class => "left_column_image") %>
+<div id="save_money">
+  <div class="save_text">Save Money!</div>
+  Ever go to the grocery store for a few things and walk out with items you didn't need?  Our shopping lists keep you focused to resist impulse buying, and cut out extra trips to the store. Also with delicious meals easily prepared at home you spend less money eating out.
+  <div class="sign_up_now_link_area">
+    <%= link_to image_tag('/images/index_0/signup_now', :border => 0, :alt => 'sign up now'), :action => 'signup' %>
+    <%= link_to image_tag('/images/index_0/see_how_it_works', :border => 0, :alt => 'see how it works'), :action => 'how_chef_works' %>
+  </div>
+</div>
+
+<%= image_tag('/images/index_0/dad_feeding_mom.jpg', :class => "left_column_image") %>
+<div id="save_family">
+  <div class="save_text">Save your family!</div>
+  Do you know what your children did at school today: who their friends are: what they had for lunch? Eating together gives families a natural time to build relationships. Kids are healthier emotionally, physically, and mentally when they eat regular family meals.
+  <div class="sign_up_now_link_area">
+    <%= link_to image_tag('/images/index_0/signup_now', :border => 0, :alt => 'sign up now'), :action => 'signup' %>
+    <%= link_to image_tag('/images/index_0/example_meal_plans', :border => 0, :alt => 'example meal plans'), :action => 'example_meal_plan' %>
+  </div>
+</div>
+
+<%= image_tag('/images/index_0/ebtc_tagline', :class => 'bottom_image') %>

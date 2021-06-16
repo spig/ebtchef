@@ -1,0 +1,50 @@
+<div id="page_header"><%= image_tag('public/contactus_header', :alt => 'contact us', :class => 'page_header') %></div>
+<div id="content">
+  <%= flash[:error].to_s.empty? ? '' : "<div class=\"errorExplanation\">#{flash[:error]}</div>" %>
+  <%= flash[:notice].to_s.empty? ? '' : "<div class=\"notice\">#{flash[:notice]}</div>" %>
+  <p>EbtChef.com is not only committed to providing you simply delicious meal plans but also <strong>Simple</strong>, <strong>Fast</strong>, and <strong>Convenient</strong> customer support.</p>
+  <hr style="clear: none; color: #dad0c4; height: 1px; padding: 0px; margin: 0px; background-color: #dad0c4; border: 0px;"/>
+  <%= start_form_tag :controller => '/public', :action => 'send_contact_form' %>
+  <p>
+  <div class="form_left">
+    <%= hidden_field_tag 'previous_controller', @previous_controller %>
+    <%= hidden_field_tag 'previous_action', @previous_action %>
+  	Subject:
+  </div>
+  <div class="form_right">
+    <%= radio_button_tag 'topic', 'general', @topic == 'general' %> General Question or Suggestion<br />
+    <%= radio_button_tag 'topic', 'askthechef', @topic == 'askthechef' %> Ask the Chef<br />
+    <%= radio_button_tag 'topic', 'service', @topic == 'service' %> Customer Service<br />
+    <%= radio_button_tag 'topic', 'technical', @topic == 'technical' %> Technical Question<br />
+    <%= radio_button_tag 'topic', 'billing', @topic == 'billing' %> Billing Question<br />
+  </div>
+  </p>
+  <p>
+  <div class="form_left">
+    <label for="name">Name:</label>
+  </div>
+  <div class="form_right">
+  	<%= text_field_tag 'name', @user.first_name, :class => 'hcw' %>
+  </div>
+  </p>
+  <p>
+  <div class="form_left">
+  	<label for="email">Email:</label>
+  </div>
+  <div class="form_right">
+  	<%= text_field_tag 'email', @user.email, :class => 'hcw' %>
+  </div>
+  </p>
+  <p>
+  <div class="form_left">
+  	<label for="question_comment">Question or Comment:</label>
+  </div>
+  <div class="form_right">
+    <%=text_area_tag 'message', '', :size => "40x6", :class => 'hcw' %></p>
+  </div>
+  </p>
+  <p><%= image_submit_tag 'member/send' %></p>
+  <!-- p>For customer service or billing questions you can also call <strong>1-888-293-2433</strong>.</p -->
+  <p>The <em>Chef</em> looks forward to helping you make simple, healthy and delicious meals a reality for your family.</p>
+</div>
+<br style="clear: both;" />

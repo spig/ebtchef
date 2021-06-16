@@ -1,0 +1,4 @@
+<div><%= image_tag 'signup/30_day_trial.jpg', :alt => 'For a Limited Time Only FREE No Risk 30 day trial' %></div>
+        <div id="guarantee_text">
+          You're going to love our service because we take the hassle out of planning meals, improve organization, and make you look good! To prove it we'll give you this service free for 30 days so you can begin spending more valuable mealtime with your family NOW.
+        </div>

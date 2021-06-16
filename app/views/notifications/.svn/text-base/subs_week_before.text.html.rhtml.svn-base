@@ -1,0 +1,30 @@
+<body style="margin: 0px auto;padding: 0px; width: 613px;">
+  <div style="color: #808080;font-family: arial, verdana, helvetica, sans-serif;font-size: .95em;margin: 0px auto; padding: 0px; width: 611px;">
+    <img src="http://ebtchef.com/images/emails/ebtc_header_news_subs.png" style="margin: 0px; padding: 0px;" />
+    <img src="http://ebtchef.com/images/emails/news_subs_leftimage.png" style="float: left; margin-left: 7px; margin-top: 7px;" />
+    <div style="margin-left: 165px; padding-left: 30px; padding-right:30px;">
+      <img src="http://ebtchef.com/images/emails/great_news_from_ebtc.png" style="margin-left: 71px;margin-top: 22px; " />
+      <hr style="width: 304px; background: #5c020b; height: 1px; padding: 0px; border: 0px;">
+      <p style="margin: 15px auto; color: #5b6e72;">
+        We are happy to announce that in just one week we are rolling out the new and improved <span style="color: #67151b;">"Everything but the Chef,"</span> a meal planning service that makes YOU look GOOD! We have <span style="color: #67151b;">simplified our service</span>, <span style="color: #67151b;">drastically reduced the price</span>, and are extending a special member only invitation to come join us. Look for sign-up details next week, and most importantly learn how you can easily <span style="color: #67151b;">get the entire Chef service absolutely FREE!</span>
+      </p>
+      <p style="margin: 15px auto; color: #333;">
+        Our members will still receive a weekly email reminder that five new, complete meal plans <span style="font-style: italic;">(every week of the year)</span> are ready--and they're <span style="color: #67151b;">FLEXIBLE</span> to meet your unique family needs! The email will always include a fabulous family treat recipe, and Chef  information in an email of the week. 
+      </p>
+      <p style="margin: 15px auto; color: #333;">
+        Let us help you save time and money while creating lasting family memories that will prove priceless and timeless. 
+      </p>
+      <p style="margin: 15px auto; color: #333;">
+        <span style="font-weight: bold;">Look for a special invitation in your inbox next week</span> and be sure to sign up, log-in and join the fastest growing meal planning community on the web AND find out right away how easy it is to get the service completely FREE!
+      </p>
+      <p style="margin: 15px auto 10px; color: #5e6d74;">
+        Here's to family,
+      </p>
+      <p style="margin: 10px auto 30px; color: #5e6d74; font-style: italic;">
+        The Chef
+      </p>
+    </div>
+    <img src="http://ebtchef.com/images/emails/ebtc_footer_news_subs.png" />
+    <img src="http://ebtchef.com/etn?s=<%=@newsletter_subscriber.id%>&e=<%=@email.id%>" style="width: 1px; height: 1px;" />
+  </div>
+</body>

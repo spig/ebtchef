@@ -1,0 +1,6 @@
+<%= start_form_tag :action => 'create' %>
+<label for="meal_plan[name]">Meal Plan Name</label>
+<%= text_field 'meal_plan', 'name' %>
+<%= hidden_field_tag 'weekly_meal_plan_id', @weekly_meal_plan_id %>
+<%= submit_tag 'Save Meal Plan' %>
+<%= end_form_tag %>

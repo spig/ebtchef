@@ -1,0 +1,21 @@
+<html>
+<head>
+  <title>Admin/Affiliate Login</title>
+  <%= stylesheet_link_tag 'admin/admin' %>
+</head>
+<body>
+<div id="main">
+	<table class="authentication" align="center">
+		<tr>
+			<td valign="middle" align="center">
+				<% if flash[:notice] != nil %>
+				<p style="text-align: center;color:#000;border-top:2px solid #5f140f;border-bottom:2px solid #5f140f;background-color:#fff;padding:5px 5px 5px 5px;width:390px;"><%= flash[:notice] %></p>
+				<% end %>
+				<%= yield %>
+			</td>
+		</tr>
+	</table>
+</div>
+
+</body>
+</html>

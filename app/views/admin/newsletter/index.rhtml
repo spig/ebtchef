@@ -1,0 +1,28 @@
+<!-- PRUNE -->
+<script language="javascript" type="text/javascript" src="/javascripts/tiny_mce/tiny_mce.js"></script>
+<script language="javascript" type="text/javascript">
+tinyMCE.init({
+	mode : "specific_textareas",
+	theme : "advanced",
+	plugins : "advhr,iespell,table,contextmenu,paste,zoom,searchreplace,inlinepopups",
+	theme_advanced_toolbar_location : "top",
+	theme_advanced_toolbar_align : "left",
+	theme_advanced_statusbar_location : "bottom",
+	theme_advanced_fonts : "Arial=arial,helvetica,sans-serif;Courier New=courier new,courier,monospace",
+	theme_advanced_buttons2_add : "advhr,advlink,emotions,search,replace,zoom",
+	theme_advanced_buttons3_add : "iespell,tablecontrols",
+	extended_valid_elements : "hr[class|width|size|noshade],a[name|href|target|title|onclick]",
+	table_styles : "Header 1=header1;Header 2=header2;Header 3=header3",
+	table_cell_styles : "Header 1=header1;Header 2=header2;Header 3=header3;Table Cell=tableCel1",
+	table_row_styles : "Header 1=header1;Header 2=header2;Header 3=header3;Table Row=tableRow1",
+	editor_selector : "mceEditor"
+});
+</script>
+<%= start_form_tag :action => "add" %>
+<p>
+  <label for="newsletter[content]">Content</label><br/>
+  <%= text_area 'newsletter','content', :cols => '75', :class => 'mceEditor'  %><br/>
+  <%= date_select("newsletter", "available_on", :start_year => 2007) %>
+  <%= submit_tag value="Add" %>
+</p>
+<%= end_form_tag %>

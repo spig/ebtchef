@@ -1,0 +1,7 @@
+<h2>New Meal Plan</h2>
+
+<% @weekly_meal_plan.meals.each do |meal_plan| %>
+  <%= meal_plan.name %><br/>
+<% end %>
+
+<div><%= link_to 'Add Meal Plan', :controller => 'meal_plan', :action => 'new', :weekly_meal_plan_id => @weekly_meal_plan.id %></div>

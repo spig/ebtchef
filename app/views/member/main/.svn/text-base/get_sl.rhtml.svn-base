@@ -1,0 +1,17 @@
+<h1>Shopping List for Weeks <%= @week_list  %></h1>
+<% @week_list.each do |wk| %>
+<h2><%= @ingredients[wk][0].recipe.name %></h2>
+<%=
+  
+  show_category(@ingredient_categories[IngredientCategory::CANNED_JAR_CATEGORY], @canned_jar_ingredients[wk]) +
+  show_category(@ingredient_categories[IngredientCategory::DAIRY_FROZEN_CATEGORY], @dairy_frozen_ingredients[wk]) +
+  show_category(@ingredient_categories[IngredientCategory::GRAINS_NUTS_SEEDS_CATEGORY], @grains_nuts_seeds_ingredients[wk]) +
+  show_category(@ingredient_categories[IngredientCategory::MEAT_SEAFOOD_CATEGORY], @meat_seafood_ingredients[wk]) +
+  show_category(@ingredient_categories[IngredientCategory::PRODUCE_CATEGORY], @produce_ingredients[wk]) +
+  show_category(@ingredient_categories[IngredientCategory::MISCELLANEOUS_CATEGORY], @miscellaneous_ingredients[wk])
+%>
+<%=
+  show_category(@ingredient_categories[IngredientCategory::PANTRY_CATEGORY] + ' - check before you shop', @pantry_ingredients[wk]) { |name| name + "<br />" }
+%>
+<hr />
+<% end %>

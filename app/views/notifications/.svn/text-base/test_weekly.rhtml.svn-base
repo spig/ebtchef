@@ -1,0 +1,49 @@
+<body style="text-align: center;">
+  <div style="margin: 0px auto;padding: 0px; width: 524px; text-align: left;">
+    <p style="border: 0; margin: 0;"><img alt="Everything but the Chef Weekly Reminder" src="http://ebtchef.com/images/emails/weekly/everything_but_the_chef.png" style="margin: 0px; padding: 0px;" /><a href="http://ebtchef.com/ect?s=<%=@user.id%>&e=<%=@email_id%>&next=<%=u "http://ebtchef.com/"%>"><img alt="Login to my account" src="http://ebtchef.com/images/emails/weekly/login_to_my_account.png" style="margin: 0px; padding: 0px; border: 0px;" /></a></p>
+    <p style="border: 0; margin: 0;"><img alt="Simply delicious meals you can make" src="http://ebtchef.com/images/emails/weekly/delicious_meals.png" style="margin: 0px; padding: 0px;" /></p>
+    <div style="border-right: 1px solid #d7c59f; border-left: 1px solid #d7c59f; border-bottom: 1px solid #d7c59f; color: #808080; font-family: arial, verdana, helvetica, sans-serif;font-size: .8em;margin: 0px auto; padding: 0px; width: 522px;">
+      <div style="padding: 15px 40px; color: #333; background-color: #fff; word-spacing: .25em; line-height: 1.3em;">
+  	    <p style="font: 12px arial; color: #333;">Hello <%= @user.first_name %>,</p>
+    	  <p style="font: bold 12px arial; color: #45616c;">We are happy to notify you that this week's meal plans brought to you by <em>Everything but the Chef</em> are ready at <a href="http://ebtchef.com/ect?s=<%=@user.id%>&e=<%=@email_id%>&next=<%=u "http://ebtchef.com/"%>" style="color: #45616c;">EbtChef.com</a></p>
+    	  <p style="font: 12px arial; color: #333;">To learn how to get Chef's service completely <em style="font: bold 15px arial; color: #333;">FREE</em> <a href="http://ebtchef.com/ect?s=<%=@user.id%>&e=<%=@email_id%>&next=<%=u "http://ebtchef.com/member/main/viral"%>" style="color: 5c020a;">click here!</a></p>
+    	  <p style="font: bold 15px arial; color: #333; margin-bottom: 0px;">Treat Your Family Recipe</a></p>        
+    	  <ul style="list-style: none; margin: 0px 0;">
+    	    <li style="font: bold 12px arial; color: #333;">Best Oatmeal without the Cinnamon Cookies</li>
+          <li style="margin-left: 1em;">3/4 cup shortening</li>
+          <li style="margin-left: 1em;">1 cup packed brown sugar</li>
+          <li style="margin-left: 1em;">1/2 cup granulated sugar</li>
+          <li style="margin-left: 1em;">1 egg</li>
+          <li style="margin-left: 1em;">3 Tbsp water</li>
+          <li style="margin-left: 1em;">1 tsp vanilla</li>
+          <li style="margin-left: 1em;">1 tsp salt</li>
+          <li style="margin-left: 1em;">1/2 tsp baking soda</li>
+          <li style="margin-left: 1em;">1 cup flour</li>
+          <li style="margin-left: 1em;">3 cups rolled oats</li>
+          <li style="margin-left: 1em;">1/2 cup sweetened flaked coconut</li>
+          <li style="margin-left: 1em;">3/4 cup chopped pecans</li>
+    	  </ul>
+    	  <ul>
+    	    <li style="list-style: none;">Preheat oven to 350 degrees. Mix all ingredients in the order given with an electric mixer. Mix after the addition of each ingredient or just keep mixer running on medium low speed as you add ingredients. Drop by teaspoonfuls onto lightly sprayed cookie sheet. Bake about 12 minutes until edges begin to brown.</li>
+    	  </ul>
+        <em style="font: bold italic 15px arial; color: #5c020a;">Chef Email of the Week</em>
+        <p style="font: 12px arial; color: #333;">
+          I really would like to cook more meals at home.  I am single and 36.  The thought of spending time to shop, prepare foods, cook, and then clean keeps me from doing anything.  I am interested in using your website. . .<br />
+          I have some basic skills, but I'm not consistent.  Please help.<br />
+          JLT<br />
+        </p>
+        <p style="font: bold italic 15px arial; color: #5c020a;">Chef response:</p>
+        <p>Hello,</p>
+        <p>Thanks for your interest! My suggestion: sign up for our service for a month. If you don't find it helpful you can cancel before 30 days and get your money back.</p>
+        <p>I hear you when you list all that goes into meal prep...unfortunately that's just how it is. Like anything that's worthwhile, meal preparation takes time. With Chef service you don't have to search recipes, put together a menu and then make up a shopping list. This alone will save you lots of time!</p>
+        <p>Also, please believe me when I say that if you will make meals consistently (perhaps 2-3 times a week and work up from there) they will become much easier.</p>
+        <p>Good luck to you and we look forward to having you as a member of Everything but the Chef.</p>
+        <p style="font: 12px arial; color: #45616c;">Best in cooking,</p>
+        <p style="font: italic 15px arial; color: #5c020a;">Chef</p>
+      </div>
+      <img src="http://ebtchef.com/et?s=<%=@user.id%>&e=<%=@email_id%>" style="width: 1px; height: 1px;" />
+      <p style="border: 0; margin: 0;"><img src="http://ebtchef.com/images/emails/weekly/ebtchef_footer.png" alt="Everything but the Chef - Helping you make family memories one meal at a time!" style="margin: 22px auto 0;"></p>
+    </div>
+    <p style="font-size: 9px arial; color: #333;"><a href="http://ebtchef.com/unsubscribe?email=<%=h @user.email %>" style="font: 9px arial; color: #333;">Unsubscribe here</a></p>
+  </div>
+</body>

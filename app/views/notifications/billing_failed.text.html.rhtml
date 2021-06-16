@@ -1,0 +1,71 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<body style="text-align: center;">
+<div style="width:524px; margin:0 auto; padding:0;">
+	<div style="border: 0; margin: 0;">
+		<a href="http://ebtchef.com/ect?s=<%=@user.id%>&amp;e=<%=@email_id%>&amp;next=<%=u "http://ebtchef.com/"%>"><img alt="Everything but the Chef Weekly Reminder" src="http://ebtchef.com/images-layout/email-header.gif" style="margin: 0px; padding: 0px; border: 0px;" /></a>
+		<img alt="Simply delicious meals you can make" src="http://ebtchef.com/images-layout/email-header-food.gif" style="margin: 0px; padding: 0px;" />
+	</div>
+	<div style="margin:0 3px; padding: 15px 40px; text-align: left; border:1px solid #d7c59f; font-family: arial, verdana, helvetica, sans-serif;font-size: .8em; color: #333; background-color: #fff; word-spacing: .25em; line-height: 1.3em;">    		<!-- greeting -->
+		<p style="font: 12px arial; color: #333;">Dear <%= "#{@user.first_name} #{@user.last_name}"  %>,</p>
+
+		<% p = @user.price.to_s
+		    p[-2,0] = '.'%>
+		<% if  @day_of == 0 %>
+		<!-- day of -->
+		<p style="font: 12px arial; color: #333;">Oops today was your billing date but unfortunately we were unable to process your
+		<%= @user.recurrence.capitalize %> charge using the credit card on your <i>Everything but the Chef</i> account.</p>
+		<% elsif @day_of == 3 %>
+		<!-- day 3 -->
+		<p style="font: 12px arial; color: #333;">A few days ago was your billing date for <i>Everything but the Chef</i>.
+		Unfortunately we were unable to process your <%= @user.recurrence.capitalize %> charge using the credit card on your
+		<i>Everything but the Chef</i> account.</p>
+		<% elsif @day_of == 7 %>
+		<!-- day 7 -->
+		<p style="font: 12px arial; color: #333;">Just a reminder that your information needs to be updated at <a
+		href="http://ebtchef.com" >www.EbtChef.com</a>. We have tried to process your payment a few times now and were not able to
+		do so.</p>
+		<% elsif @day_of == 14 %>
+		<!-- day 14 -->
+		<p style="font: 12px arial; color: #333;">Just a reminder that your information needs to be updated at <a
+		href="http://ebtchef.com" >www.EbtChef.com</a>. We have tried to process your payment for two weeks now and have not been
+		able to do so.</p>
+		<% elsif @day_of == 21 %>
+		<!-- day 21 -->
+		<p style="font: 12px arial; color: #333;">We have been trying to reach you concerning your account with <i>Everything but
+		the Chef</i>. This is the final notice to encourage you to please go into your account page at <a href="http://ebtchef.com"
+		>www.EbtChef.com</a> (login and then click "My Account"), and update your credit card information.</p>
+		<% elsif @day_of == 28 %>
+		<p style ="font: 12px arial; color: #333;">We are aware that the information in your account with <i>Everything but the
+		Chef</i> has not been corrected. After many attempts to reach you concerning this matter and our inability to successfully
+		charge your credit card, we have put your membership on hold.</p>
+		<p style="">When you wish to come back to Chef simply go to the website and update your information by logging into your
+		account at <a href="http://ebtchef.com" >www.EbtChef.com</a>. Then update your billing information so we may restart your service.</p>
+		<% end %>
+
+		<% unless @day_of > 14 %>
+		<!-- reasons -->
+		<p style="font: 12px arial; color: #333;">Some reasons this may have occurred:<br />
+		  <ol>
+		    <li>There was an error made in entering credit card or cardholder details and they do not match those appearing on your credit card.</li>
+		    <li>There were insufficient funds available at the time we processed your credit card for payment.</li>
+		    <li>You have cancelled or replaced your credit card and so the number we have on file is no longer valid.</li>
+		    <li>Your card has expired.
+		    </li>
+		  </ol>
+		</p>
+
+		<!-- solution -->
+		<p style="font: 12px arial; color: #333;">So that we can continue to provide uninterrupted Chef service will you please
+		login to your account at <a href="http://ebtchef.com" >www.EbtChef.com</a> and then click the "My Account" found in the horizontal navigation bar at the top of the
+		meal plan page. There you can easily update your billing information.</p>
+		<% end %>
+
+		<!-- thanks -->
+		<p style="font: 12px arial; color: #333;">Thanks and please have a wonderful mealtime together with your family today!</p>
+		<!--signature-->
+		<p style="font: 15px arial; color: #5c020a;">Chef</p>
+	</div>
+	<!--  footer -->
+	<p style="border: 0; margin: 0;"><img src="http://ebtchef.com/images-layout/email-footer.gif" alt="Everything but the Chef - Helping you make family memories one meal at a time!" style="margin:0 auto;"></p>
+</div>
+</body>

@@ -1,0 +1,5 @@
+<div id="page_header"><%= image_tag 'member/myaccount_header', :alt => "My Account", :class => 'page_header' %></div>
+  <%= javascript_tag(%Q[setTimeout("window.location.href='logout'",2500)]) %></td>
+  <div>
+  <h3>Your subscription has been successfully cancelled. Please come back soon--remember when you tell your friends about <i>Chef</i> you get the service free!</h3>
+  </div>

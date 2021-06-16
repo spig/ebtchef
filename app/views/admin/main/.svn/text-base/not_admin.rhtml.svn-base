@@ -1,0 +1,5 @@
+<p>We could not find your account in our database.  Please contact your site administrator to determine if this message is in error.</p>
+<p>
+Access attempt logged:<br />
+Access coming from IP Address: <%= @ipaddr %>
+</p>

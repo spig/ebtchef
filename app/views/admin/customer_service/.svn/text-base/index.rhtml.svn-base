@@ -1,0 +1,20 @@
+<%= "<div class=\"flashNotice\">#{flash[:notice]}</div>" if flash[:notice] and !flash[:notice].empty? %>
+<table width="100%"><tr><td><a href="<%= url_for :action=>:index, :section=>:members %>" title="Show monthly and yearly members"><%= @monthlies_size + @yearlies_size %> members</a>,
+  <a href="<%= url_for :action=>:index, :section=>:trials %>" title="Show trial period users"><%= @trials_size %> trials</a>,
+  <a href="<%= url_for :action=>:index, :section=>:failed_trials %>" title="Show trial users who never supplied their billing info"><%= @failed_trials_size %> failed trials</a>,
+  <a href="<%= url_for :action=>:index, :section=>:failed_billings %>" title="Show accounts that failed the last billing"><%= @failed_billings_size %> failed billings</a>,
+  <a href="<%= url_for :action=>:index, :section=>:all %>" title="Show all users (very long)"><%= @all_size %> total</a></td>
+  <td><%= form_tag :action => :index %>Search: <%= text_field_tag :search, params[:search] %><%= submit_tag :Search %><%= end_form_tag %>
+  </td></tr></table>
+<h2><a href="<%= url_for :action=>:index, :section=>:monthly %>">Monthly <%= @monthlies_size %></a></h2>
+<%= render :partial => 'users', :locals => {:users => @monthlies} %>
+<h2><a href="<%= url_for :action=>:index, :section=>:yearly %>">Yearly <%= @yearlies_size %></h2>
+<%= render :partial => 'users', :locals => {:users => @yearlies} %>
+<h2><a href="<%= url_for :action=>:index, :section=>:trials %>">Trials <%= @trials_size %></a></h2>
+<%= render :partial => 'users', :locals => {:users => @trials} %>
+<h2><a href="<%= url_for :action=>:index, :section=>:failed_trials %>">Failed Trials<%= @failed_trials_size %></a></h2>
+<%= render :partial => 'users', :locals => {:users => @failed_trials} %>
+<h2><a href="<%= url_for :action=>:index, :section=>:failed_billings %>">Failed Billings <%= @failed_billings_size %></a></h2>
+<%= render :partial => 'failed_billings', :locals => {:users => @failed_billings} %>
+<h2><a href="<%= url_for :action=>:index, :section=>:cancelled %>">Cancelled <%= @cancelled_size %></a></h2>
+<%= render :partial => 'cancelled_users', :locals => {:users => @cancelled, :cancelled => true} %>

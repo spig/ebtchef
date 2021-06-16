@@ -1,0 +1,33 @@
+<body style="margin: 0px auto;padding: 0px; width: 613px;">
+  <div style="color: #808080;font-family: arial, verdana, helvetica, sans-serif;font-size: .95em;margin: 0px auto; padding: 0px; width: 611px;">
+    <img src="http://ebtchef.com/images/emails/ebtc_header_member.png" style="margin: 0px; padding: 0px;" />
+    <img src="http://ebtchef.com/images/emails/members_leftimage.png" style="float: left; margin-left: 7px; margin-top: 7px;" />
+    <div style="margin-left: 165px; padding-left: 30px; padding-right:30px;">
+      <img src="http://ebtchef.com/images/emails/some_great_news.png" style="margin-left: 71px;margin-top: 22px; " />
+      <hr style="width: 304px; background: #d7ad7b; height: 1px; padding: 0px; border: 0px;">
+      <p style="margin: 15px auto; color: #673011;">
+        We are happy to inform you that Everything but the Chef is making improvements that  enhance our service! These changes are due to launch one week from today (on August 1st ) Perhaps most importantly, it will now be <strong>easy to get the Chef service absolutely FREE.</strong>
+      </p>
+      <p style="margin: 15px auto; color: #333;">
+        The great news is that our meal plans will now be flexible. Members will be able to save "favorite" recipes from previous Chef meals and replace unwanted recipes with these favorites, as well as delete meal plans altogether if desired. In the near future we hope to offer members the ability to save their personal traditional family favorites and incorporate these into weekly meal plans also. 
+      </p>
+      <p style="margin: 15px auto; color: #333;">
+        Members will still receive a weekly email reminder with a link to the latest meal plans. This email will include a fabulous family treat recipe, and a Chef email of the week.
+      </p>
+      <p style="margin: 15px auto; color: #333; font-weight: bold;">
+        There will be no change to your username or password so be sure to log-in right away and learn how easy it is to get the Chef service for free!
+      </p>
+      <p style="margin: 15px auto; color: #333;">
+        Look for these changes to occur next week and be sure to let us know what you think.
+      </p>
+      <p style="margin: 15px auto 10px; color: #673011; font-weight: bold;">
+        Yours in Cooking,
+      </p>
+      <p style="margin: 10px auto 30px; color: #673011; font-style: italic;">
+        The Chef
+      </p>
+    </div>
+    <img src="http://ebtchef.com/images/emails/ebtc_footer_member.png" />
+    <img src="http://ebtchef.com/etm?u=<%=@user.id%>&e=<%=@email.id%>" style="width: 1px; height: 1px;" />
+  </div>
+</body>

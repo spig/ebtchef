@@ -1,0 +1,2 @@
+page.visual_effect :drop_out, "ingredient_#{@ri_id}", :duration => 1.5
+#page.remove "ingredient_#{@ri_id}"

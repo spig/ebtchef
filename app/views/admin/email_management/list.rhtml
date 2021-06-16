@@ -1,0 +1,33 @@
+<table>
+  <tr class="ListTitle">
+    <th>ID</th>
+    <th>Name</th>
+    <th>Sent At</th>
+    <th>Recipient Count</th>
+    <th>Opens</th>
+    <th>Unique Opens</th>
+    <th>Click Throughs</th>
+  </tr>
+  
+<% for email in @emails %>
+  <tr valign="top" class="ListLine0" style="text-align:right">
+    <td><%=h email.send(:id) %></td>
+    <td><%=h email.send(:name) %></td>
+    <td><%=h email.send(:sent_at) %></td>
+    <td><%=h email.send(:recipient_count) %></td>
+    <td><%=h EmailOpenStat.find(:all, :conditions => ['email_id = ?', email.send(:id)]).size%></td>
+    <td><%=h EmailOpenStat.find(:all, :conditions => ['email_id = ?', email.send(:id)], :group => 'sent_to_id').size%></td>
+    <td><%=h EmailClickthroughStat.find(:all, :conditions => ['email_id = ?', email.send(:id)], :group => 'sent_to_id').size%></td>
+    <td><%= link_to 'Show', :action => 'show', :id => email %></td>
+    <td><%= link_to 'Edit', :action => 'edit', :id => email %></td>
+    <td><%= link_to 'Destroy', { :action => 'destroy', :id => email }, :confirm => 'Are you sure?', :post => true %></td>
+  </tr>
+<% end %>
+</table>
+
+<%= link_to 'Previous page', { :page => @email_pages.current.previous } if @email_pages.current.previous %>
+<%= link_to 'Next page', { :page => @email_pages.current.next } if @email_pages.current.next %> 
+
+<br />
+
+<%= link_to 'New email', :action => 'new' %>

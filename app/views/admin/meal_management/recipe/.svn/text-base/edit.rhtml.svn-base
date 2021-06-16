@@ -1,0 +1,10 @@
+<h3>Edit Recipe</h3>
+
+<div>
+<%= render :partial => 'recipe_ingredients' %>
+<%= start_form_tag :action => 'update', :id => @recipe.id, :week => @week %>
+<%= render :partial => 'form' %>
+<%= submit_tag 'Update' %><br />
+<%= end_form_tag %>
+</div>
+<%= javascript_tag "$('recipe_ingredient_quantity').focus()" %>

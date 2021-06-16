@@ -1,0 +1,52 @@
+<div>
+  
+<%
+  meal_count = 0
+  @cwmp.meal_plans.each do |meal_plan|
+    meal_plan_name = 'meal'+(meal_count+=1).to_s
+    meal_title_div_class = (meal_count > 1) ? "non_first_meal_title" : "first_meal_title"
+-%>
+  
+  <div class="<%= meal_title_div_class %>">
+     <%= link_to image_tag("member/add_favorite_recipe_redbg", :alt => "add favorite recipe", :class => 'meal_action'), :action => 'add_to_meal_plan', :id => meal_plan.id %> <span class="meal_title"><%= "Meal #{meal_count}" %></span> <%= image_tag "member/#{meal_plan_name}_header", :alt => "#{meal_plan_name}", :class => 'meal_title' %> <%= image_tag("#{meal_plan.meal_plan_type}_red", :alt => "#{meal_plan.meal_plan_type}", :class => 'meal_type') unless meal_plan.meal_plan_type.to_s.empty? %>
+  </div>
+  <div class="meal_note_tip">
+    <%= meal_plan.note_tip %>
+  </div>
+  <%
+    count = 0
+    meal_plan.recipes.each do |recipe_id|
+      count+=1
+      recipe = @recipes.select {|r| r.id == recipe_id}[0]
+  -%>
+    <div id="<%= recipe.dom_id %>" <%= "style=\"padding-top: 0.5em;\"" if count > 1 %>>
+      <div class="recipe_header"><div class="recipe_title"><%= recipe.name %></div><div class="recipe_actions"><%= add_favorite_link(recipe) %> <span style="color: #c9c9c9;">|</span> <%= link_to_remote image_tag('member/delete_recipe', :alt => 'delete recipe', :style => "border: 0px;"), :url => { :action => 'delete_recipe', :id => recipe.id }, :method => 'post', :confirm => "Are you sure you want to remove '#{h(recipe.name)}'?" %></div></div>
+      <%= recipe.servings.to_i > 4 ? %Q|<div class="recipe_servings">#{recipe.servings} servings</div>| : '' %>
+      <div class="ingredients">
+        <% recipe.recipe_ingredients.sort{|a,b| a.position <=> b.position}.each do |recipe_ingredient| -%>
+          <% ingredient = recipe.ingredients.select {|ing| ing.id == recipe_ingredient.ingredient_id}[0] %>
+          <%= recipe_ingredient.quantity %><%= recipe_ingredient.measure ? ' ' + recipe_ingredient.measure + ' ' : ' ' %><%= ingredient.name %><%= (recipe_ingredient.notes and recipe_ingredient.notes.size > 0) ? ", #{recipe_ingredient.notes}" : '' %><br />
+        <% end -%>
+      </div>
+      <% unless recipe.instructions.to_s.empty? -%>
+        <div class="instructions">
+          <ul>
+            <li>
+              <%= recipe.instructions.split(/[\r\n]+/).join("</li>\n<li>") if recipe.instructions %>
+            </li>
+          </ul>
+        </div>
+      <% end -%>
+      <% unless recipe.notes.to_s.empty? -%>
+        <div class="notes">
+          <ul>
+            <li>
+              <%= recipe.notes.split(/[\r\n]+/).join("</li>\n<li>") if recipe.notes %>
+            </li>
+          </ul>
+        </div>
+      <% end -%>
+    </div>
+  <% end %>
+<% end -%>
+</div>

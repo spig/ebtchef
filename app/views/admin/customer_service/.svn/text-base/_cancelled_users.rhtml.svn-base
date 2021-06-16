@@ -1,0 +1,24 @@
+<table>
+  <tr class="ListTitle">
+    <th><%= link_to 'ID', :order_by => 'id', :desc => @desc %></th>
+    <th><%= link_to 'Name', :order_by => 'first_name', :desc => @desc %></th>
+    <th><%= link_to 'Email', :order_by => 'email', :desc => @desc %></th>
+    <th><%= link_to 'Affiliate', :order_by => 'affiliate_id', :desc => @desc %></th>
+    <th><%= link_to 'Type', :order_by => 'recurrence', :desc => @desc %></th>
+    <th><%= link_to 'Price', :order_by => 'price', :desc => @desc %></th>
+    <th><%= link_to 'Signup Date', :order_by => 'created_at', :desc => @desc %></th>
+    <th><%= link_to 'Viral Sent', :order_by => 'viral_sent_count', :desc => @desc %></th>
+    <th><%= link_to 'Last Billed', :order_by => 'last_billed_on', :desc => @desc %></th>
+    <th><%= link_to 'Next Billing', :order_by => 'next_billing_on', :desc => @desc %></th>
+    <th>Days in System</th>
+    <th>Last Login</th>
+    <th>Login Count</th>
+    <th><%= link_to 'State', :order_by => 'state', :desc => @desc %></th>
+    <th><%= link_to 'Phone', :order_by => 'phone', :desc => @desc %></th>
+    <th>CC/Check #</th>
+    <th><%= link_to 'Referrer', :order_by => 'referrer', :desc => @desc %>
+    <th>Cancelled On</th>
+    <th>Cancel Reason</th>
+  </tr>
+<%= render :partial => 'user', :collection => users %>
+</table>

@@ -1,0 +1,29 @@
+<h2>Referrer Logs</h2>
+<% if @referrer %>
+Most Recent Referrer Logs for <%= @referrer.host %>
+<% end %>
+<table>
+  <tr>
+    <th>
+      URI
+    </th>
+    <th>
+      IP Addr
+    </th>
+    <th>
+      Date Visited
+    </th>
+  </tr>
+<% last_referrer = nil %>
+<% @referrer_logs.each do |referrer_log| %>
+<% if last_referrer != referrer_log.referrer_id %>
+  <tr><th colspan="3">Referrer: <%= Referrer.find(referrer_log.referrer_id).host %></th>
+    <% last_referrer = referrer_log.referrer_id %>
+<% end %>
+  <tr>
+    <td><%= link_to referrer_log.uri.to_s[0..50]+'...', referrer_log.uri %></td>
+    <td><%= referrer_log.ip_addr %></td>
+    <td><%= referrer_log.created_at.strftime('%m-%d-%y %H:%M') %></td>
+  </tr>
+<% end %>
+</table>

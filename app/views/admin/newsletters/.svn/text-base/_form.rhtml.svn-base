@@ -1,0 +1,41 @@
+<%= error_messages_for 'newsletter' %>
+
+<!--[form:newsletter]-->
+<table>
+    <tr>
+        <td>
+            <label for="newsletter_availible_on">Available on</label><br/>
+            <%= date_select 'newsletter', 'available_on'  %>
+        </td>
+    </tr>
+    <tr>
+        <td valign="top">
+            <p><label for="newsletter_tip_name">Tip name</label><br/>
+            <%= text_field 'newsletter', 'tip_name'  %></p>
+
+            <p><label for="newsletter_tip_description">Tip description</label><br/>
+            <%= text_area 'newsletter', 'tip_description'  %></p>
+            </td>
+                    <td valign="top">
+            <p><label for="newsletter_treat_name">Treat name</label><br/>
+            <%= text_field 'newsletter', 'treat_name'  %></p>
+
+            <p><label for="newsletter_treat_ingreidents">Treat ingredients</label><br/>
+            <%= text_area 'newsletter', 'treat_ingredients'  %></p>
+
+            <p><label for="newsletter_treat_instructions">Treat instructions</label><br/>
+            <%= text_area 'newsletter', 'treat_instructions'  %></p>
+        </td>
+        <td valign="top">
+            <p><label for="newsletter_email_greeting">Email intro</label><br/>
+            <%= text_field 'newsletter', 'email_greeting'  %></p>
+
+            <p><label for="newsletter_email_question">Email question</label><br/>
+            <%= text_area 'newsletter', 'email_question'  %></p>
+
+            <p><label for="newsletter_email_response">Email response</label><br/>
+            <%= text_area 'newsletter', 'email_response'  %></p>
+        </td>
+    </tr>
+</table>
+<!--[eoform:newsletter]-->

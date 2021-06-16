@@ -1,0 +1,118 @@
+8
+
+dir
+227
+svn://ebtchef.com:3691/trunk/public/javascripts/tiny_mce/plugins/paste
+svn://ebtchef.com:3691
+
+
+
+2007-02-24T08:05:51.252060Z
+20
+wvoll
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+d0e37886-a427-0410-bba9-d5af18d9fb2f
+
+editor_plugin.js
+file
+
+
+
+
+2008-02-22T03:41:37.000000Z
+2e51aa9a2c049a07384345f53211a87e
+2007-02-24T08:05:51.252060Z
+20
+wvoll
+has-props
+
+pasteword.htm
+file
+
+
+
+
+2008-02-22T03:41:37.000000Z
+c5e287e22909f9945c1bf65ceb7e66aa
+2007-02-24T08:05:51.252060Z
+20
+wvoll
+has-props
+
+jscripts
+dir
+
+langs
+dir
+
+images
+dir
+
+editor_plugin_src.js
+file
+
+
+
+
+2008-02-22T03:41:37.000000Z
+722f5d17f008b58cdb57da0520f7f7b4
+2007-02-24T08:05:51.252060Z
+20
+wvoll
+has-props
+
+css
+dir
+
+pastetext.htm
+file
+
+
+
+
+2008-02-22T03:41:37.000000Z
+4895645731e0148b7e730eff6b78a4e0
+2007-02-24T08:05:51.252060Z
+20
+wvoll
+has-props
+
+readme.txt
+file
+
+
+
+
+2008-02-22T03:41:37.000000Z
+fe81b122bcf0e8599bb841cca33f967a
+2007-02-24T08:05:51.252060Z
+20
+wvoll
+has-props
+
+blank.htm
+file
+
+
+
+
+2008-02-22T03:41:37.000000Z
+c071fad481334f6b06d4bb55bc76c2fe
+2007-02-24T08:05:51.252060Z
+20
+wvoll
+has-props
+

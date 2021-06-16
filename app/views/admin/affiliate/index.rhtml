@@ -1,0 +1,34 @@
+
+<h2>Affiliate Statistics</h2>
+<table>
+  <tr class="ListTitle">
+    <th>Name</th>
+    <th>Hits this week</th>
+    <th>Conversions this week</th>
+    <th>Hits this month</th>
+    <th>Conversions this month</th>
+    <th>Hits last month</th>
+    <th>Conversions last month</th>
+    <th>Total Conversions</th>
+    <th>Total Cancellations</th>
+    <th>Save Page</th>
+    <th>Penny Page</th>
+    <th>Shanes Page</th>
+  </tr>
+<% @affiliates.each do |a| %>
+  <tr valign="top" class="ListLine0" style="text-align:right">
+    <td><%= a.name %></td>
+    <td><%= a.affiliate_logs.count(:conditions => ['created_at >= ?', Time.now.beginning_of_week]) %></td>
+    <td><%= User.count(:conditions => [ 'affiliate_id = ? and created_at >= ?', a.name, Time.now.beginning_of_week ]) %></td>
+    <td><%= a.affiliate_logs.count(:conditions => ['created_at >= ?', Time.now.beginning_of_month]) %></td>
+    <td><%= User.count(:conditions => [ 'affiliate_id = ? and created_at >= ?', a.name, Time.now.beginning_of_month ]) %></td>
+    <td><%= a.affiliate_logs.count(:conditions => ['created_at >= ? and created_at < ?', Time.now.months_ago(1), Time.now.beginning_of_month ]) %></td>
+    <td><%= User.count(:conditions => [ 'affiliate_id = ? and created_at >= ? and created_at < ?', a.name, Time.now.months_ago(1), Time.now.beginning_of_month ]) %></td>
+    <td><%= User.count(:conditions => [ 'affiliate_id = ?', a.name ]) %></td>
+    <td><%= User.count(:conditions => [ 'affiliate_id = ? and cancelled_on is not null', a.name ]) %></td>
+    <td><%= User.count(:conditions => ['affiliate_id = ? and layout_used= ?', a.name, 'index_0' ]) %></td>
+    <td><%= User.count(:conditions => ['affiliate_id = ? and layout_used= ?', a.name, 'index_1' ]) %></td>
+    <td><%= User.count(:conditions => ['affiliate_id = ? and layout_used= ?', a.name, 'shanes_page' ]) %></td>
+  </tr>
+<% end %>
+</table>

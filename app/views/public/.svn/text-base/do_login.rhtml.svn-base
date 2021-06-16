@@ -1,0 +1,19 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" version="-//W3C//DTD XHTML 1.1//EN" xml:lang="en">
+<head>
+  <script language="javascript">
+    window.location.href = "<%= @url %>";
+  </script>
+  <noscript>
+    Please ensure javascript is enabled to use Everything but the Chef.  After it has been enabled please continue <a href="<%= @url %>">here</a>.
+  </noscript>
+  <title>Everything but the Chef</title>
+</head>
+<body>
+  You should be redirected to the new URL for Everything but the Chef.<br />
+<br />
+  If you are not automatically redirected, please continue <a href="<%= @url %>">here</a>.
+</body>
+</html>

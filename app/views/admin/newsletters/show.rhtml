@@ -1,0 +1,27 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+    <title>Your Everything but the Chef Meals are Ready</title>
+</head>
+<body>
+    <div align="center">
+    <p>
+        <%= link_to 'Back to Newsletters', :action => 'list' %>
+        &nbsp; <%= link_to 'Edit', {:action=>'edit', :id=>@newsletter}, {:title=>"Make changes to this newsletter"} %>
+        &nbsp; <%= link_to 'Send a Test', {:action=>'test', :id=>@newsletter, :nonsub=>params[:nonsub]}, {:title=>"Send this email as a test to #{@user.email}"} %>
+        &nbsp; <%= link_to('Show Non-subscriber', :action => 'show', :nonsub=>1) unless @nonsub %>
+        <%= link_to('Show Subscriber', :action => 'show') if @nonsub %>
+    </p>
+
+    <% if flash[:notice] %>
+    <p id="flash_notice"><%= flash[:notice] %></p>
+    <% end %>
+    <% if flash[:error] %>
+    <p id="flash_error"><%= flash[:error] %></p>
+    <% end %>
+
+    <h2><%= @nonsub ? 'Non-subscriber' : 'Subscriber' %> Email</h2>
+    </div>
+    <%= render :partial => @nonsub ? 'nonsub' : 'sub' %>
+</body>
+</html>

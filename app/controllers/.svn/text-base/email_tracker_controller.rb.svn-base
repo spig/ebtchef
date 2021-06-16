@@ -1,0 +1,51 @@
+class EmailTrackerController < ApplicationController
+  
+  def clear_gif
+    response.headers['Content-type'] = 'image/gif'
+    clear_gif = 'R0lGODlhAQABAPcAAP///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////yH5BAEAAAAALAAAAAABAAEAAAgEAAEEBAA7'
+    render :inline => Base64::decode64(clear_gif)
+  end
+  
+  # track email opening stats
+  def track_email_opens
+    EmailOpenStat.create(:sent_to_id => params[:u] || params[:s],
+                           :email_id => params[:e],
+                           :ip_addr => request.remote_ip)
+  rescue
+  ensure
+    clear_gif
+  end
+  
+  def track_email_click_throughs
+    EmailClickthroughStat.create(:sent_to_id => params[:u] || params[:s],
+                                 :email_id => params[:e],
+                                 :ip_addr => request.remote_ip)
+  rescue
+  ensure
+    redirect_to params[:next] || url_for(:controller=>:public, :action=>:signup) #signup_url
+  end
+  
+  def unsubscribe
+    # check NewsletterSubscriber's first
+    # simply delete their email address from the database - may be bad if a rogue person is doing this...
+    begin
+      NewsletterSubscriber.find_by_email(params[:email]).destroy
+    rescue
+    end
+    
+    begin
+      SurveyResponder.find_by_email(params[:email]).destroy
+    rescue
+    end
+    
+    # udpate send_weekly_reminder flag for Users
+    begin
+      u = User.find_by_email(params[:email])
+      u.send_weekly_reminder = false
+      u.save
+    rescue
+    end
+    
+    render :text => 'You have been unsubscribed'
+  end
+end

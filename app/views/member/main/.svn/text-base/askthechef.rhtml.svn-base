@@ -1,0 +1,33 @@
+<style>
+label {
+  float: left;
+  font-size: .8em;
+  width: 90px;
+}
+</style>
+<div id="page_header"><%= image_tag 'member/askthechef_header', :alt => "Ask the Chef", :class => 'page_header' %></div>
+  <div id="ask_the_chef_box"  style="padding-left:20px;border:1px solid #e2d6b9; background:url('/images/member/askthechef.jpg') top right no-repeat;">
+    <%= flash[:error] ? "<div class=\"errorMessage\">#{flash[:error]}</div>" : "" %>
+    <%= flash[:notice] ? "<div class=\"notice\">#{flash[:notice]}</div>" : "" %>
+    <div style="color: #45616c; font-weight: bold;">Do you have a question about one<br /> of our recipes?</div>
+    <p>
+    Please let us know what it is, and we<br />
+    will get back with you as soon as possible.
+    </p>
+    <p>
+    Yours in Cooking, <span style="color: #45616c;">The Chef</span>
+    </p>
+    <br />
+    <%= form_tag( {:action => 'submit'}, :id => 'askthechef_form') %>
+    <div>
+      <label for="email">Email Address</label><%= text_field_tag 'email_address', '', :size => 25 %>
+    </div>
+    <div>
+      <label for="question">Question</label><%= text_area_tag 'question', '', :size => "30x7" %>
+    </div>
+    <div>
+    <%= link_to_function image_tag('member/clear_form', :style => 'margin-left: 100px; border: 0px;'), "Form.reset('askthechef_form')" %>
+    <%= link_to_function image_tag('member/submitquestion', :style => 'border: 0px;'), "$('askthechef_form').submit()" %>
+    <%= end_form_tag %>
+    </div>
+  </div>

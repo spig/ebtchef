@@ -1,0 +1,34 @@
+<% self.class.send(:include, Admin::NewslettersHelper) unless self.class.include? Admin::NewslettersHelper %>
+<!-- Begin content -->
+<p><em style="font: bold italic 15px arial; color: #5c020a;">This Week's Tip:</em></p>
+
+<!-- Tip -->
+<p class="MsoNormal"><b><%= h @newsletter.tip_name %></b></p>
+<p class="MsoNormal"><%= rc 'tip_description' %></p>
+<p class="MsoNormal">For More great tips to enrich family life visit our website!</p>
+
+<p style="font: bold italic 15px arial; color: #5c020a;">Treat Your Family Recipe</p>
+<p class="MsoNormal"><b><%= rc 'treat_name' %></b></p>
+<blockquote>
+  <p class="MsoNormal"><%= items 'treat_ingredients' %></p>
+</blockquote>
+<p class="MsoNormal"><%= rc 'treat_instructions' %></p>
+<!-- email of the week -->
+<p><em style="font: bold italic 15px arial; color: #5c020a;">Chef Email of the Week</em></p>
+<!-- from -->
+<p style="font: bold 12px arial; color: #333;"><%=
+    if @newsletter.email_greeting.blank?
+      'Question/Comment from a <i>Chef</i> customer'
+    else
+      h @newsletter.email_greeting
+    end %>:</p>
+
+<!-- question -->
+<p class="MsoNormal"><%= rc 'email_question' %></p>
+
+<!-- response -->
+<p style="font: bold italic 15px arial; color: #5c020a;">Chef response:</p>
+<p class="MsoNormal"><%= rc 'email_response' %></p>
+<p style="font: italic 15px arial; color: #5c020a;"><i>Chef</i></p>
+
+<!-- end content -->

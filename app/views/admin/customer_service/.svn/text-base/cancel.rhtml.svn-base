@@ -1,0 +1,22 @@
+<h2>Cancel User</h2>
+
+<%= "<div class=\"flashNotice\">#{flash[:notice]}</div>" if flash[:notice] and !flash[:notice].empty? %>
+
+<div>Cancelling <%= @user.first_name %>, <%= @user.last_name %> (<%= @user.email %>)</div>
+<%= start_form_tag :action => 'cancel', :id => @user.id %>
+<div>
+  <label for="user_cancel_reason">Cancel Reason: (255 chars)</label>
+  </div>
+<div>
+  <%= text_area :user, :cancel_reason, :cols => 51, :rows => 5 %>
+</div>
+<div>
+  <label for="user_cancelled_on">Cancel Date:</label>
+</div>
+<div>
+  <%= date_select :user, :cancelled_on %>
+</div>
+<div>
+  <%= submit_tag 'Cancel this User' %> <%= link_to 'do not cancel this user', :action => 'index' %>
+</div>
+<%= end_form_tag %>

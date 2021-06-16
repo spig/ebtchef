@@ -1,0 +1,5 @@
+<div id="page_header"><%= link_to image_tag('member/printer_friendly', :alt => 'Printer Friendly', :style => 'float: right; border: 0px; margin-right: 10px;'), "javascript: window.print();" %><%= image_tag 'member/yourweeklymealplans_header', :alt => "Your weekly meal plans", :class => 'page_header' %></div>
+<%= render :partial => "main_menu" %>
+<p>
+<%= render :partial => "weekly_meal_plan" %>
+</p>

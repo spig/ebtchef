@@ -1,0 +1,33 @@
+<h3>Ingredients</h3>
+<%
+  unclassified_ingredients = @ingredients.select do |ingredient|
+    ingredient.ingredient_category_id.nil?
+  end
+    
+  if unclassified_ingredients.size > 0 -%>
+  <div class="shopping_list_category">no category</div>
+    <p>
+      <% unclassified_ingredients.each do |ing| -%>
+        <%= link_to ing.name.capitalize, :action => 'edit', :id => ing.id %><br />
+      <% end -%>
+    </p>
+<% end -%>
+<%
+  @ingredient_categories.each_pair do |cat_id, cat_name|
+ 
+    ingredients = @ingredients.select do |ingredient|
+      ingredient.ingredient_category_id.to_i == cat_id
+    end
+    
+    if ingredients.size > 0
+%>
+  <div class="shopping_list_category"><%= cat_name %></div>
+  <p>
+      <% ingredients.each do |ing| -%>
+        <%= link_to ing.name.capitalize, :action => 'edit', :id => ing.id %><br />
+      <% end -%>
+  </p>
+<%
+    end
+  end
+%>

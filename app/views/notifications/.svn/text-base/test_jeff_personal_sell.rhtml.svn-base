@@ -1,0 +1,14 @@
+Hello All,<br />
+<br />
+I personally want to take a moment and send out a quick reminder to the few of you who have not taken a closer look at the new <a href="http://ebtchef.com/ect?s=<%=@user.id%>&e=<%=@email_id%>&next=<%=u "http://ebtchef.com/"%>" style="color: #5c020a;">Everything but the Chef</a> service - that NOW is the time!<br />
+<br />
+To our newsletter subscribers (for a limited time only) we are offering a rate of only $4.95 a month, which represents a 50% savings off our normal price, AND a <a href="http://ebtchef.com/ect?s=<%=@user.id%>&e=<%=@email_id%>&next=<%=u "http://ebtchef.com/public/signup?c=newsletter&e=#{@user.email}&h=#{Promo.gen_hash('newsletter', @user.email)}"%>" style="color: #5c020a;">FREE 30 day trial</a>. With this offer, you have nothing to lose--I personally guarantee it!<br />
+<br />
+So now, right at the start of a new school year, is the time for you to see completely RISK FREE once and for all if the Chef service can help you and your family. Since we work hard day and night to serve your family and make your life easier - I am betting it can.<br />
+<br />
+Don't miss this opportunity - <a href="http://ebtchef.com/ect?s=<%=@user.id%>&e=<%=@email_id%>&next=<%=u "http://ebtchef.com/public/signup?c=newsletter&e=#{@user.email}&h=#{Promo.gen_hash('newsletter', @user.email)}"%>" style="color: #5c020a;">Sign up for a FREE 30 day trial here</a> - and let me know what you think.<br />
+<br />
+Truly,<br />
+<br />
+<img src="http://ebtchef.com/et?s=<%=@user.id%>&e=<%=@email_id%>" style="width: 1px; height: 1px;" />
+<img src="http://ebtchef.com/images/emails/jeff_director.jpg" />

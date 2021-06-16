@@ -1,0 +1,91 @@
+<div id="page_header"><%= image_tag('public/learnmore_header', :alt => 'learn more', :class => 'page_header') %></div>
+<div id="content">
+  <h2>Benefits of Simply Delicious Meal Plans</h2>
+
+  <h4>Time Savings are HUGE!</h4>
+  <p>
+  What's your time worth? For less than 15 cents a day eliminate endless trips to the supermarket, searching recipes, making shopping lists, formulating a plan to tackle the daily dilemma of what to feed the family for dinner. Spend no more time eating out than you want to--AND the Chef has created simply delicious recipes, so you save time in preparation. <span style="color: #404040; font-weight: bold;">No more meal planning, more time in your day.</span>
+  </p>
+
+  <h4>Better Nutrition!</h4>
+
+  <p>
+  With a plan you can be sure that you're eating a variety of foods - one of the keys to good nutrition. The Chef has thoughtfully chosen different meats, veggies, and fruits to enjoy in a week's time, and limited the number of highly processed foods, so preparing Everything but the Chef meals on a regular basis beats eating out, or eating out of a box.
+  </p>
+
+  <h4>Variety!</h4>
+
+  <p>
+  Ever get tired of a weekly regimen of spaghetti, pizza, tacos, burgers---repeat? Do you have 6-12 or more months of recipes for delicious main courses with satisfying side dishes? <span style="color: #404040; font-weight: bold;">Give Chef a try; you'll be surprised at all the different things you can make simply at home.</span>
+  </p>
+
+  <h4>Save Money!</h4>
+  <p>
+  Experts have pointed out the fact that having a - plan - before you do your shopping is the single most cost effective thing you can do to save money on groceries. But pre-planning meals and then making out shopping lists and checking for needed ingredients, etc. takes time. What's your time worth? For less than 15 cents a day eliminate your pre-planning, and use our plan to help you cut down on endless trips to the supermarket, keep your shopping focused to avoid impulse buying which cuts down on buying food you don't really need and buying food that will go bad before you ever use it. Plus no more need to eat out so often. All this saves you money on gas, groceries and expensive prepared food.
+  </p>
+
+  <%= link_to(image_tag('public/signup_now', :alt => 'signup now', :border => 0, :style => 'margin-top: 20px;'), :controller => '/public', :action => 'signup') if @show_signup %>
+  <%= link_to(image_tag('member/tell_your_friends', :alt => 'Tell Your Friends Now!', :border => 0, :style => 'margin-top: 20px;'), :controller => '/member/main', :action => 'viral') if @show_viral %>
+
+  <h2>Strong Evidence That Eating Together Will Strengthen Your Family</h2>
+
+  <h4>Is having regular Family meals together that big a deal?</h4>
+  <p class="quote">
+  "Study after study finds that kids who eat dinner with their families regularly are better students, healthier people, and less likely to smoke, drink, or use drugs than those who don't. A University of Michigan study of children ages 3 through 12, for example, found that more meal time with the family was the single strongest predictor of better achievement scores and few behavioral problems" in school. 
+  <div class="reference">(Family Matters Column, The Wall Street Journal, November 11, 2004, by Hillary Stout, page D5)</div>
+  </p>
+
+  <h3>A Tool Kit created to promote family mealtime sums up research findings in this way:</h3>
+  <p>
+  <h4>When Adults, Children and Teenagers Eat Together...</h4>
+  <%= image_tag('public/learnmore_kids.jpg', :alt => 'kids smiling', :style => 'float: right; padding-left: 10px;') %>
+  <ul style="margin-left: 3em; line-height: 1.5em; list-style-image: url(/images/public/red_list_icon.png); color: #333; font-size: .85em;">
+    <li>Children do better in school.</li>
+    <li>Children have fewer behavior problems.</li>
+    <li>Teenagers are less apt to use alcohol or drugs.</li>
+    <li>Children and teenagers say they like having time to talk to the adults in their lives.</li>
+    <li>Communication between children and adults improves.</li>
+    <li>Children understand their family's values and traditions.</li>
+    <li>Traditions are created around food and meals.</li>
+  </ul>
+  <div class="reference">(Nutrition Education Network of Washington and Washington State University <a href="http://nutrition.wsu.edu/eat/why.html">http://nutrition.wsu.edu/eat/why.html</a>)</div>
+  </p>
+
+  <hr class="template_hr" />
+
+  <h4>Then why don't we do it?</h4>
+  <p>
+  Obstacles to having regular family meals together include time constraints, varied activities, and not knowing how to cook. Considering the benefits it's time to find a way.  
+  </p>
+
+  <h4>The answer:</h4>
+  <p>
+  Everything but the Chef provides a simple service. Our mission is to increase the time families spend together in meaningful activities, especially eating together. Our service can increase your confidence in getting a simple, delicious meal on the table day after day, or simply give you ideas for meals that save you time in planning and preparation. Please visit our website  <a href="http://EbtChef.com">EbtChef.com</a> where we also suggest fun things families can  do together &#8212; togetherness can be simple but is vitally important! 
+  </p>
+
+  <%= link_to(image_tag('public/signup_now', :alt => 'signup now', :border => 0, :style => 'margin-top: 20px;'), :controller => '/public', :action => 'signup') if @show_signup %>
+  <%= link_to(image_tag('member/tell_your_friends', :alt => 'Tell Your Friends Now!', :border => 0, :style => 'margin-top: 20px;'), :controller => '/member/main', :action => 'viral') if @show_viral %>
+
+  <h2>Thoughts from Chef</h2>
+  <p>
+  I love my children. As they grow up and leave home I find great joy and comfort in the fond memories of wonderful talks, and many laughs shared around our kitchen table as we ate meals together. My six children chose to be involved in different sports, clubs, after school programs, church and community service organizations, etc. It was not easy to find a time to have a meal together! It had to be our top priority <span style="font-style: italic;">(with few exceptions).</span>
+  </p>
+  <br />
+  <p>
+  No one can argue with the fact that the world needs help &#8212; what can we do? Families need to spend time together, and setting a tradition of regular mealtime makes this happen. It's NOT easy, but it's worth it more than you will ever realize, until it's either too late, or you are reaping benefits you wouldn't trade for anything. 
+  </p>
+  <br />
+  <p>
+  Within the family, happy, responsible, moral individuals motivated to do good things can be the outcome if parents keep family their priority. What other unit of society can make as strong a claim, or offer a better chance for this? <span style="color: #404040; font-weight: bold;">Everything but the Chef helps families get back to the basics that foster strong family relationships.</span>
+  </p>
+  <p>
+  <h2>Wishing you the very best in your family adventures,</h2>
+  </p>
+  <br />
+  <div><%= image_tag('/images/public/diane_sig') %></div>
+  <h4 style="margin-top: 0px; padding: 0px;">Founder--Everything but the Chef</h4>
+  <br />
+  <br />
+  <%= link_to(image_tag('public/signup_now', :alt => 'signup now', :border => 0), :controller => '/public', :action => 'signup') if @show_signup %>
+  <%= link_to(image_tag('member/tell_your_friends', :alt => 'Tell Your Friends Now!', :border => 0), :controller => '/member/main', :action => 'viral') if @show_viral %>
+</div>

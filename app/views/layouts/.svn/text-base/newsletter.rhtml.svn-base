@@ -1,0 +1,56 @@
+<style type="text/css">
+  p {font:12px arial}
+  h4 {
+    margin-bottom:.0001pt;
+    text-align:center;
+    page-break-after:avoid;
+    font-size:12.0pt;
+    font-family:"Times New Roman",serif;
+    margin-left:0in;
+    margin-right:0in;
+    margin-top:0in
+  }
+  .center {
+    text-align: center;
+  }
+  .width {
+    width:524px;
+    margin:0 auto;
+    padding:0;
+  }
+  .zero {
+    border: 0;
+    margin: 0;
+    padding:0;
+  }
+  .content {
+    margin:0 3px;
+    padding: 15px 40px;
+    text-align: left;
+    border:1px solid #d7c59f;
+    font-family: arial, verdana, helvetica, sans-serif;
+    font-size: .8em;
+    color: #333;
+    background-color: #fff;
+    word-spacing: .25em;
+    line-height: 1.3em;
+  }
+  .minor {
+    font: 9px arial;
+    color: #333;
+  }
+</style>
+
+<div class="center">
+  <div class="width">
+    <p class="zero"><a href="http://ebtchef.com/ect?s=<%=@user.id%>&e=<%=@email_id%>&next=<%=u "http://ebtchef.com/member"%>"><img alt="Everything but the Chef Weekly Reminder" src="http://ebtchef.com/images-layout/email-header.gif" class="zero" /></a></p>
+
+    <p class="zero"><img alt="Simply delicious meals you can make" src="http://ebtchef.com/images/emails/weekly/delicious_meals.png" class="zero" /></p>
+
+    <div class="content">
+      <%= yield %>
+    </div>
+    <p class="zero"><img src="http://ebtchef.com/images-layout/email-footer.gif" alt="Everything but the Chef - Helping you make family memories one meal at a time!" class="zero"></p>
+  </div>
+  <p><a href="http://ebtchef.com/unsubscribe?email=<%= h @user.email %>" class="minor">Unsubscribe here</a></p>
+</div>

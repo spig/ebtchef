@@ -1,0 +1,46 @@
+<h3>Weekly Meal Plans</h3>
+
+<div>
+<%= link_to '&lt;&lt;', :week => get_previous_month %> <%= link_to '&lt;', :week => get_previous_week %> Week starting <%= current_week %> <%= link_to '&gt;', :week => get_next_week %> <%= link_to '&gt;&gt;', :week => get_next_month %> ( <%= link_to 'This Week', :week => 0 %> )
+</div>
+<br/>
+<div>Preview this week's meal plans</div>
+<%= link_to( "Week's meal plans", {:controller => '/member/main', :action => 'weekly_meal_plans', :week => current_week_number }, :target => 'weekly_meal_plans') %><br />
+<%= link_to( "Week's shopping list", {:controller => '/member/main', :action => 'shopping_list', :week => current_week_number }, :target => 'weekly_meal_plans') %><br />
+
+
+<div id="meals">
+<% @weekly_meal_plan.meal_plans.each do |meal_plan| %>
+  <div class="meal">
+    <%= link_to meal_plan.name, :controller => '/admin/meal_management/meal_plan', :action => 'edit', :id => meal_plan.id, :week => @week %><br/>
+    <%=
+      case meal_plan.meal_plan_type_id
+        when 1:
+          image_tag 'quick.gif'
+        when 2
+          image_tag 'crockpot.gif'
+        when 3
+          image_tag 'make-ahead.gif'
+        else
+          ''
+      end
+    %>
+    <% if meal_plan.note_tip and meal_plan.note_tip.size > 0 -%>
+    <div class="meal_plan_note">Note/Tip: <%= meal_plan.note_tip %></div>
+    <% end -%>
+
+    <%= start_form_tag( :controller => 'recipe', :action => 'create', :meal_plan_id => meal_plan.id, :week => @week ).gsub(/(&(\w+);\2;)/, '&\2;') %>
+    <%= text_field_with_auto_complete 'recipe', 'name' %> <%= submit_tag 'Add Recipe' %><br/>
+    <%= end_form_tag %>
+    <ul>
+  <% meal_plan.meal_plan_recipes.each do |mpr| %>
+  <%   recipe = Recipe.find(mpr.recipe_id) %>
+  <li> <%= link_to 'remove', { :controller => 'meal_plan', :action => 'remove_recipe', :id => meal_plan.id, :recipe_id => recipe.id, :week => @week }, :confirm => 'Are you sure you want to remove this recipe from this meal plan?', :method => 'post' %> / <%= link_to 'edit', :controller => 'recipe', :action => 'edit', :id => recipe.id, :week => @week %> - <%= recipe.name %></li>
+  <% end %>
+    </ul>
+  </div>
+<% end %>
+</div>
+
+<div id="recipe">
+</div>
